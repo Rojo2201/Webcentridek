@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 	<head>
-		<link rel="icon" type="image/png" href="Logo flat.png"/>
+		<link rel="icon"type="image/png" href= "Logo flat.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<meta charset="UTF-8">
@@ -12,7 +11,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
 		<style>
-			/* Estilos generales */
 			header{
 				margin:0px;
 			}
@@ -26,19 +24,36 @@
 			}
 			a{
 				font-family: 'Roboto', sans-serif;
+				text-align:justify;
 				color:white;
 				text-decoration:none;
+				margin-left;
 				font-size:20px;
 			}
-			#MKI:hover, #MKII:hover{
-				background-color:#afc91f;
+			#MKI:hover{
+			background-color:#afc91f;
 			}
-			#MKI, #MKII{
+			#MKII:hover{
+			background-color:#afc91f;
+			}
+			#MKI{
 				background-color:#212656;
 				height:50px;
+				width:100px;
 				border: solid 2px white;
 				display:inline;
 				padding:5px;
+				margin-left:60px;
+				margin-right:60px;
+				}
+			#MKII{
+				background-color:#212656;
+				height:50px;
+				width:150px;
+				border: white;
+				display:inline;
+				border: solid 2px white;
+				padding: 5px;
 				margin-left:60px;
 				margin-right:60px;
 			}
@@ -46,23 +61,49 @@
 				display:none;
 			}
 			.w3-left, .w3-right, .w3-badge {
-				cursor:pointer;
+				cursor:pointer
 			}
 			.w3-badge {
-				height:13px;width:13px;padding:0;
+				height:13px;width:13px;padding:0
 			}
-			#texto1, #texto2 {
+			#texto1{
+				background-color:white;
+				padding:0px;
+				text-align:justify;
+				margin-bottom:2px;
+				margin:5px;
+			}
+			#texto2{
 				text-align:justify;
 			}
-			#MKIII, #MKIV, #MKIX, #MKX, #MKVIII {
+			#imagen1{
+				margin-left:50px;
+			}
+			#imagen2{
+				margin-left:200px;
+			}
+			#imagen3{
+				margin-right:10px;
+			}
+			#MKIII{
 				background-color:white;
+				height:500px;
+				width:500px;
 				border: none;
+				margin-left:80px;
 				padding:5px;
-				margin:20px 0;
-				display:inline-block;
-				width: 100%;
-				max-width: 500px;
-				text-align: justify;
+				float:left;
+			}
+			#MKIV{
+				background-color:white;
+				height:500px;
+				width:500px;
+				border: none;
+				margin-left:80px;
+				padding:5px;
+				float:right;
+				margin-right:120px;
+				margin-bottom:100px
 			}
 			#MKV{
 				background-color:#afc91f;
@@ -73,14 +114,15 @@
 				padding:5px;
 				margin-left:80px;
 				margin-right:80px;
-			}
-			#envio{
-				color:white;
-				background-color:#afc91f;
-				border-radius:15%;
-			}
+				}
+				#envio{
+					color:white;
+					background-color:#afc91f;
+					border-radius:15%;
+				}
 			h1{
 				font-family: 'Sofia Sans Condensed', sans-serif;
+				text-align:justify;
 				color:#056d5f;
 				font-size:40px;
 				margin-left:50px;
@@ -88,63 +130,87 @@
 			p{
 				font-family: 'Roboto', sans-serif;
 				font-size:20px;
-				text-align:justify;
+				text-align:justify
 			}
-			input, textarea{
+			#refa{
+				margin-left:100px;
+			}
+			input{
 				border: solid 2px #212656;
-				width: 100%;
-				padding: 8px;
-				margin-bottom: 15px;
 			}
-			#MKVI, #MKVII{
+			textarea{
+				border:solid 2px #212656;
+				ra
+			}
+			#MKIX{
+				background-color:white;
+				height:500px;
+				width:300px;
+				border: none;
+				margin-left:150px;
+				padding:5px;
+				display:inline-block;
+				text-align: justify;
+			}
+			#MKX{
+				background-color:white;
+				height:500px;
+				width:300px;
+				border: none;
+				margin-left:80px;
+				padding:5px;
+				display:inline-block;
+				margin-right:0px;
+				text-align: justify;
+			}
+			#MKVIII{
+				background-color:white;
+				height:500px;
+				width:300px;
+				border: none;
+				margin-left:80px;
+				padding:5px;
+				display:inline-block;
+				margin-right:0px;
+				text-align: justify;
+			}
+			#sol{
+				margin-left:100px
+			}
+			#lentes{
+				margin-left:100px
+			}
+			#infinito{
+				margin-left:100px
+			}
+			#vision{
+				margin-left:100px	
+			}
+			#valores{
+				margin-left:100px	
+			}
+			#MKVI{
 				font-family: 'Sofia Sans Condensed', sans-serif;
 				color:white;
+				font-size:40px;
 			}
-			/* Estilos específicos para dispositivos móviles */
-			@media only screen and (max-width: 768px) {
-				nav {
-					text-align: center;
-				}
-				#MKI, #MKII {
-					width: 100%;
-					margin: 10px 0;
-				}
-				#MKIII, #MKIV, #MKIX, #MKX, #MKVIII {
-					width: 100%;
-					max-width: none;
-					margin: 20px 0;
-				}
-				#MKVI, #MKVII {
-					text-align: center;
-					font-size: 32px;
-				}
-				#sol, #lentes, #infinito, #vision, #valores {
-					margin-left: 0;
-					display: block;
-					width: 80%;
-					margin: 0 auto;
-				}
-				#MKIII, #MKIV, #MKIX, #MKX, #MKVIII {
-					padding: 10px;
-				}
-				#envio {
-					width: 100%;
-					text-align: center;
-				}
-				h1 {
-					font-size: 30px;
-				}
-				p {
-					font-size: 16px;
-				}
+			#MKVII{
+				font-family: 'Sofia Sans Condensed', sans-serif;
+				color:white;
+				font-size:25px;
+			}
+			#img{
+				margin-left:300px
 			}
 		</style>
-		<title>CENTRIDEK</title>
+		<title>
+			CENTRIDEK
+		</title>
 	</head>
 	<body>
 		<header>
 			<nav>
-				<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:70"></a>
+				<a id= "logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style= "width:70"></a>
 				<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
 				<div id="MKI"><a href="Servicios.html">Servicios</a></div>
 				<div id="MKI"><a href="ventas.html">Ventas</a></div>
@@ -153,67 +219,98 @@
 			</nav>
 		</header>
 		<div>
-			<DIV id="MKVI" style="position: absolute;left:600;top:200">NOSOTROS</DIV>
-			<DIV id="MKVII" style="position: absolute;left:595;top:240">¿Quiénes somos?</DIV>
-			<img alt="Centridek portada" src="Centridek.png" style="width:100%">
+		<DIV id="MKVI" style="position: absolute;left:600;top:200">NOSOTROS</DIV>
+		<DIV id="MKVII" style="position: absolute;left:595;top:240">¿Quiénes somos?</DIV>
+				<img alt="Centridek portada" src="Centridek.png" style="width:100%">
 		</div>
 		<br>
+		</br>
 		<div id="MKIX">
 			<article>
-				<img alt="Un sol" id="sol" src="sol.png" style="width:90">
-				<h1 id="refa">MISIÓN</h1>
-				<p>
-					Brindar servicios de manteniemiento con la mejor calidad y productos a precios justos buscando siempre el mayor beneficio para el cliente, en función de lograr una relación benéfica y cálida basada en la atención honesta, especializada y única que podemos brindar solo nosotros.
-				</p>
+			<img alt="Un sol" id="sol" src="sol.png" style= "width:90">
+			<h1 id="refa">
+				MISIÓN
+			</h1>
+			<p>
+				Brindar servicios de manteniemiento con la mejor calidad y productos a precios justos 
+				buscando siempre el mayor beneficio para el cliente, en función de lograr una relación
+				benéfica y cálida basada en la atención honesta, especializada y única que podemos 
+				brindar solo nosotros.
+			</p>
 			</article>
 		</div>
 		<div id="MKX">
 			<article>
-				<img alt="Un par de lentes" id="lentes" src="lentes.png" style="width:90">
-				<h1 id="vision">VISIÓN</h1>
-				<p>
-					Llegar a ser una alternativa confiable, honesta y de calidad para todas las empresas dentro del ámbito nacional e internacional, cumpliendo siempre en tiempo el mantenimiento solicitado, brindando la mejor atención y los mejores beneficios para todos nuestros clientes.
-				</p>
+			<img alt="Un par de lentes" id="lentes" src="lentes.png" style= "width:90">
+			<h1 id="vision">
+				VISIÓN
+			</h1>
+			<p>
+				Llegar a ser una alternativa confiable, honesta y de calidad para todas las empresas dentro 
+				del ámbito nacional e internacional, cumpliendo siempre en tiempo el mantenimiento solicitado, 
+				brindando la mejor atención y los mejores beneficios para todos nuestros clientes.
+
+			</p>
 			</article>
 		</div>
 		<div id="MKVIII">
 			<article>
-				<img alt="Un infinito" id="infinito" src="infinito.png" style="width:90">
-				<h1 id="valores">VALORES</h1>
-				<p>
-					Los valores por los que nos regimos son vitales para nosotros, ya qué requerimos de una total confianza por parte de nuestros clientes; por lo qué, siempre tenemos muy en cuenta la responsabilidad, la puntualidad, la calidad y, por último, pero no menos importante la honestidad.
-				</p>
+			<img alt="Un infinito" id="infinito" src="infinito.png" style= "width:90">
+			<h1 id="valores">
+				VALORES
+			</h1>
+			<p>
+				Los valores por los que nos regimos son vitales para nosotros, ya qué requerimos de una total 
+				confianza por de parte de nuestros clientes; por lo qué, siempre tenemos muy en cuenta la
+				responsabilidad, la puntualidad, la calidad y, por último, pero no menos importante la honestidad.
+			</p>
 			</article>
 		</div>
+		
 		<div id="MKIII">
 			<article>
-				<h1 id="refa">CONTÁCTANOS</h1>
-				<p id="info1">
-					Escríbenos y en el menor tiempo posible te responderemos con un mensaje por correo electrónico o por una llamada de nuestro call center. 
-				</p>
-				<img id="imagen1" src="Linea.png" style="width:75%">
-				<p id="info1">
-					<img id="imagen3" src="correo2.png" style="width:10%">centridek@hotmail.com
-				</p>
-				<p id="info1">
-					<img id="imagen3" src="whats2.png" style="width:10%">7773753194, 777
-				</p>
+			<h1 id="refa">
+				CONTÁCTANOS
+			</h1>
+			<p id="info1">
+				Escríbenos y en el menor tiempo posible te responderemos con un mensaje por correo electrónico
+				o por una llamada de nuestro call center. 
+			</p>
+			<img id="imagen1" src="Linea.png" style="width:75%">
+			<p id="info1">
+				<img id="imagen3" src="correo2.png" style="width:10%">centridek@hotmail.com
+			</p>
+			<p id="info1">
+				<img id="imagen3" src="whats2.png" style="width:10%">7773753194, 777
+			</p>
 			</article>
 		</div>
 		<div id="MKIV">
 			<article>
-				<h1>ENVÍANOS UN MENSAJE</h1>
-				<form class="form register" action="https://formspree.io/f/xdkewbvk" method="POST">
-					<label> Nombre</label>
-					<input type="text" name="nombre" size="40">
-					<label> E-mail</label>
-					<input type="text" name="E-mail" size="40">
-					<label> Teléfono</label>
-					<input type="text" name="Telefono" size="40">
-					<label>Mensaje</label>
-					<textarea name="Asunto" rows="5" cols="40"></textarea>
-					<input class="botons" id="envio" type="submit" value="ENVIAR">
-				</form>
+			<h1>
+				ENVÍANOS UN MENSAJE
+			</h1>
+			<form class="form register"
+					action="https://formspree.io/f/xdkewbvk"
+					method="POST">
+				<label> Nombre</label>
+				<br></br>
+				<input type="text" name="nombre" size="40">
+				<br></br>
+				<label> E-mail</label>
+				<br></br>
+				<input type="text" name="E-mail" size="40">
+				<br></br>
+				<label> Teléfono</label>
+				<br></br>
+				<input type="text" name="Telefono" size="40">
+				<br></br>
+				<label>Mensaje</label>
+				<br></br>
+				<textarea class="controls" name="Asunto" rows="5" cols="40"></textarea>
+				<br></br>
+				<input class="botons" id="envio" type="submit" value="ENVIAR">
+			</form>
 			</article>
 		</div>
 	</body>
