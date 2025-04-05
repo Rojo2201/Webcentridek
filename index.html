@@ -1,257 +1,319 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<link rel="icon" type="image/png" href="Logo flat.png"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<meta charset="UTF-8">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
-	<style>
-		/* Modificación de la barra de navegación para el botón de menú */
-		nav {
-			background-color: #212656;
-			height: 90px;
-			padding: 10px;
-			text-align: center;
-			margin: 0;
-			position: relative;
-		}
-
-		/* Estilo de los enlaces */
-		a {
-			font-family: 'Roboto', sans-serif;
-			color: white;
-			text-decoration: none;
-			font-size: 20px;
-			display: inline-block;
-			margin-left: 20px;
-		}
-
-		#MKI:hover, #MKII:hover {
-			background-color: #afc91f;
-		}
-
-		/* Estilo del contenedor del botón de menú */
-		#menu-button {
-			display: none; /* Ocultamos el botón en pantallas grandes */
-			position: absolute;
-			top: 20px;
-			right: 20px;
-			cursor: pointer;
-		}
-
-		/* Modificamos la visibilidad del botón en pantallas pequeñas */
-		@media screen and (max-width: 768px) {
-			#menu-button {
-				display: block;
+<html>
+	<head>
+		<link rel="icon"type="image/png" href= "Logo flat.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<meta charset="UTF-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
+		<style>
+			header{
+				margin:0px;
 			}
-			nav {
-				text-align: left; /* Alineamos los elementos de forma vertical */
+			nav{
+				background-color:#212656;
+				height:90px;
+				padding:10px;
+				text-align:center;
+				text-decoration: none;
+				margin:0px;
 			}
-			#MKI, #MKII {
-				width: 100%; /* Hacemos que los botones ocupen el 100% en pantallas pequeñas */
-				text-align: center;
-				margin: 5px 0;
+			a{
+				font-family: 'Roboto', sans-serif;
+				text-align:justify;
+				color:white;
+				text-decoration:none;
+				margin-left;
+				font-size:20px;
 			}
-		}
-
-		/* Estilos generales del contenido */
-		header {
-			margin: 0px;
-		}
-
-		.mySlides {
-			display: none;
-		}
-
-		h1 {
-			font-family: 'Sofia Sans Condensed', sans-serif;
-			text-align: justify;
-			color: #056d5f;
-			font-size: 40px;
-			margin-left: 50px;
-		}
-
-		p {
-			font-family: 'Roboto', sans-serif;
-			font-size: 20px;
-			text-align: justify;
-		}
-
-		#MKIII, #MKIV {
-			background-color: white;
-			height: 500px;
-			width: 500px;
-			border: none;
-			padding: 5px;
-		}
-
-		/* Media Queries para Pantallas Pequeñas (Móviles) */
-		@media screen and (max-width: 768px) {
-			/* Ajustes en la barra de navegación para pantallas pequeñas */
-			nav {
-				padding: 10px;
-				text-align: center;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+			#MKI:hover{
+				background-color:#afc91f;
 			}
-			#MKI, #MKII {
-				width: 100%; /* Hacer que los botones ocupen el 100% del ancho */
-				text-align: center;
-				margin: 5px 0; /* Espaciado adecuado entre botones */
-				font-size: 18px;
+			#MKII:hover{
+				background-color:#afc91f;
 			}
-		}
-
-		/* Ajustes para pantallas muy pequeñas (como en teléfonos en modo retrato) */
-		@media screen and (max-width: 480px) {
-			nav {
-				padding: 8px;
+			#MKI{
+				background-color:#212656;
+				height:50px;
+				width:100px;
+				border: solid 2px white;
+				display:inline;
+				padding:5px;
+				margin-left:60px;
+				margin-right:60px;
 			}
-
-			#MKI, #MKII {
-				width: 100%;
-				font-size: 16px;
-				margin: 8px 0;
+			#MKII{
+				background-color:#212656;
+				height:50px;
+				width:150px;
+				border: white;
+				display:inline;
+				border: solid 2px white;
+				padding: 5px;
+				margin-left:60px;
+				margin-right:60px;
 			}
-
-			#MKIII, #MKIV {
-				width: 90%;
-				margin: 10px 0;
+			.mySlides {
+				display:none;
+			}
+			.w3-left, .w3-right, .w3-badge {
+				cursor:pointer
+			}
+			.w3-badge {
+				height:13px;width:13px;padding:0
+			}
+			#texto1{
+				background-color:white;
+				padding:0px;
+				text-align:justify;
+				margin-bottom:2px;
+				margin:20px;
+				margin-left
+			}
+			#texto2{
+				text-align:justify;
+			}
+			#imagen1{
+				margin-left:200px;
+			}
+			#imagen2{
+				margin-left:160px;
+			}
+			#MKIII{
+				background-color:white;
+				height:500px;
+				width:500px;
+				border: none;
+				margin-left:80px;
+				padding:5px;
+				float:left;
+			}
+			#MKIV{
+				background-color:white;
+				height:500px;
+				width:500px;
+				border: none;
+				margin-left:80px;
+				padding:5px;
+				float:right;
+				margin-right:120px;
+			}
+			h1{
+				font-family: 'Sofia Sans Condensed', sans-serif;
+				text-align:justify;
+				color:#056d5f;
+				font-size:40px;
+				margin-left:50px;
+			}
+			p{
+				font-family: 'Roboto', sans-serif;
+				font-size:20px;
+				text-align: justify
+			}
+			#refa{
+				margin-left:150px;
 			}
 
-			/* Ajuste de imágenes */
-			#imagen1, #imagen2 {
-				width: 60%;
-			}
+			/* Media Queries para Pantallas Pequeñas (Móviles) */
+			@media screen and (max-width: 768px) {
+				/* Ajustes en la barra de navegación para pantallas pequeñas */
+				nav {
+					padding: 10px;
+					text-align: center;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				#MKI, #MKII {
+					width: 100%; /* Hacer que los botones ocupen el 100% del ancho */
+					text-align: center;
+					margin: 5px 0; /* Espaciado adecuado entre botones */
+					font-size: 18px;
+				}
 
-			/* Ajustes de los textos */
-			h1 {
-				font-size: 24px;
-			}
+				/* Ajuste de la imagen de portada en el slider */
+				.mySlides {
+					width: 100%;
+				}
 
-			p {
-				font-size: 14px;
-			}
-		}
-	</style>
-	<title>CENTRIDEK</title>
-</head>
-<body>
-	<header>
-		<nav>
-			<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:70px"></a>
+				/* Ajustar el contenedor de texto */
+				#texto1 {
+					margin-left: 10px;
+					margin-right: 10px;
+				}
 
-			<!-- Agregamos el botón de menú como una imagen -->
-			<img id="menu-button" src="menu-icon.png" alt="Menú" style="width:30px;" onclick="toggleMenu()">
+				#MKIII, #MKIV {
+					width: 90%; /* Ajustar el tamaño de los contenedores en móviles */
+					margin-left: 0;
+					margin-right: 0;
+					float: none;
+					display: block;
+					margin-bottom: 20px;
+				}
 
-			<!-- Menú de enlaces -->
-			<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
-			<div id="MKI"><a href="Servicios.html">Servicios</a></div>
-			<div id="MKI"><a href="ventas.html">Ventas</a></div>
-			<div id="MKII"><a href="reparacion.html">Reparación de piezas</a></div>
-			<div id="MKI"><a href="maquinados.html">Maquinados</a></div>
-		</nav>
-	</header>
+				#imagen1, #imagen2 {
+					width: 70%; /* Reducir el tamaño de las imágenes para que se vean bien en móviles */
+					margin: 0 auto;
+					display: block;
+				}
 
-	<div class="w3-content w3-display-container" style="max-width:1400px">
-		<img class="mySlides" alt="Centridek portada" src="Centridek intro.gif" style="width:100%">
-		<img class="mySlides" alt="Centridek portada" src="Balanceo1.jpg" style="width:100%">
-		<img class="mySlides" alt="Centridek portada2" src="Maquinas2.jpg" style="width:100%">
-		<img class="mySlides" alt="Centridek portada3" src="Maquinas3.png" style="width:100%">
-		<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-			<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-			<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-		</div>
-	</div>
+				/* Ajuste de los títulos */
+				h1 {
+					font-size: 28px;
+				}
 
-	<script>
-		var slideIndex = 1;
-		showDivs(slideIndex);
+				/* Ajuste del tamaño de los párrafos */
+				p {
+					font-size: 16px;
+				}
 
-		function plusDivs(n) {
-			showDivs(slideIndex += n);
-		}
-
-		function currentDiv(n) {
-			showDivs(slideIndex = n);
-		}
-
-		function showDivs(n) {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var dots = document.getElementsByClassName("demo");
-			if (n > x.length) {slideIndex = 1}
-			if (n < 1) {slideIndex = x.length}
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";  
-			}
-			for (i = 0; i < dots.length; i++) {
-				dots[i].className = dots[i].className.replace(" w3-white", "");
-			}
-			x[slideIndex-1].style.display = "block";  
-			dots[slideIndex-1].className += " w3-white";
-		}
-
-		// Función para alternar la visibilidad del menú en dispositivos pequeños
-		function toggleMenu() {
-			var menuItems = document.querySelectorAll("#MKI, #MKII");
-			for (var i = 0; i < menuItems.length; i++) {
-				if (menuItems[i].style.display === "block") {
-					menuItems[i].style.display = "none";
-				} else {
-					menuItems[i].style.display = "block";
+				/* Ajuste del espaciado entre elementos */
+				#refa {
+					margin-left: 0;
 				}
 			}
-		}
-	</script>
 
-	<article id="texto1">
-		<p>
+			/* Ajustes para pantallas muy pequeñas (como en teléfonos en modo retrato) */
+			@media screen and (max-width: 480px) {
+				nav {
+					padding: 8px;
+				}
+
+				#MKI, #MKII {
+					width: 100%;
+					font-size: 16px;
+					margin: 8px 0;
+				}
+
+				#MKIII, #MKIV {
+					width: 90%;
+					margin: 10px 0;
+				}
+
+				/* Ajuste de imágenes */
+				#imagen1, #imagen2 {
+					width: 60%;
+				}
+
+				/* Ajustes de los textos */
+				h1 {
+					font-size: 24px;
+				}
+
+				p {
+					font-size: 14px;
+				}
+			}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			CENTRIDEK
+		</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a id= "logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style= "width:70"></a>
+				<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
+				<div id="MKI"><a href="Servicios.html">Servicios</a></div>
+				<div id="MKI"><a href="ventas.html">Ventas</a></div>
+				<div id="MKII"><a href="reparacion.html">Reparación de piezas</a></div>
+				<div id="MKI"><a href="maquinados.html">Maquinados</a></div>
+			</nav>
+		</header>
+		<div class="w3-content w3-display-container" style="max-width:1400px">
+			<img class="mySlides" alt="Centridek portada" src="Centridek intro.gif" style="width:100%">
+			<img class="mySlides" alt="Centridek portada" src="Balanceo1.jpg" style="width:100%">
+			<img class="mySlides" alt="Centridek portada2" src="Maquinas2.jpg" style="width:100%">
+			<img class="mySlides" alt="Centridek portada3" src="Maquinas3.png" style="width:100%">
+			<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+				<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+				<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+			</div>
+		</div>
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+				showDivs(slideIndex += n);
+			}
+
+			function currentDiv(n) {
+				showDivs(slideIndex = n);
+			}
+
+			function showDivs(n) {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("demo");
+				if (n > x.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = x.length}
+				for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+				}
+				for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" w3-white", "");
+				}
+				x[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " w3-white";
+			}
+		</script>
+		<article id="texto1">
+			<p>
 			Somos una empresa joven en el mercado, pero con una sólida trayectoria respaldada por años de 
 			experiencia en el sector, lo cual nos permite garantizar la satisfacción de nuestros clientes 
 			en cada uno de nuestros servicios. Contamos con un equipo de técnicos altamente capacitados y 
 			comprometidos,  quienes respaldan nuestro trabajo y aseguran la entrega de resultados con los 
 			más altos estándares de calidad.
-		</p>
-	</article>
-	<article id="texto1">
-		<p>
+			</p>
+		</article>
+		<article id="texto1">
+			<p>
 			Nos esforzamos día con día por brindar un trato profesional, cercano y personalizado, con el 
 			objetivo de generar confianza y construir relaciones laborales duraderas. Nuestra principal 
 			meta es que cada cliente se sienta plenamente satisfecho y reciba siempre el mayor beneficio 
 			como parte fundamental de nuestra filosofía de servicio.
-		</p>
-	</article>
-
-	<div id="MKIII">
-		<article>
+			</p>
+		</article>
+		<br></br>
+		<br></br>
+		<div id="MKIII">
+			<article>
 			<img id="imagen1" src="refacciones2.png" alt="Portada de sonic generations" style="width:20%">
-			<h1 id="refa">REFACCIONES</h1>
+			<h1 id="refa">
+				REFACCIONES
+			</h1>
 			<p id="info1">
 				Las refacciones que manejamos son originales para maquinas Alfa-Laval y GEA, lo cual garantiza 
 				que tus máquinas siempre tendrán refacciones originales correspondientes a la máquina en la que
 				se esté trabajando.
 			</p>
-		</article>
-	</div>
-	<div id="MKIV">
-		<article>
+			</article>
+		</div>
+		<div id="MKIV">
+			<article>
 			<img id="imagen2" src="Centrifuga.png" style="width:40%">
-			<h1>MAQUINARIA SEMINUEVA</h1>
+			<h1>
+				MAQUINARIA SEMINUEVA
+			</h1>
 			<p id="info2">
 				Centridek cuenta con diversos tipos de máquina para los diversos tipos de proceso que existen con 
 				maquinaria seminueva, otorgando garantía de nueva en función de brindar un mayor beneficio a 
-				nuestras clientes.
+				nuestros clientes.
 			</p>
-		</article>
-	</div>
-</body>
+			</article>
+		</div>
+	</body>
 </html>
+
+
 
 
