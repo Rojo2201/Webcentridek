@@ -31,10 +31,10 @@
 				font-size:20px;
 			}
 			#MKI:hover{
-			background-color:#afc91f;
+				background-color:#afc91f;
 			}
 			#MKII:hover{
-			background-color:#afc91f;
+				background-color:#afc91f;
 			}
 			#MKI{
 				background-color:#212656;
@@ -45,7 +45,7 @@
 				padding:5px;
 				margin-left:60px;
 				margin-right:60px;
-				}
+			}
 			#MKII{
 				background-color:#212656;
 				height:50px;
@@ -117,6 +117,97 @@
 			#refa{
 				margin-left:150px;
 			}
+
+			/* Media Queries para Pantallas Pequeñas (Móviles) */
+			@media screen and (max-width: 768px) {
+				/* Ajustes en la barra de navegación para pantallas pequeñas */
+				nav {
+					padding: 10px;
+					text-align: center;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				#MKI, #MKII {
+					width: 100%; /* Hacer que los botones ocupen el 100% del ancho */
+					text-align: center;
+					margin: 5px 0; /* Espaciado adecuado entre botones */
+					font-size: 18px;
+				}
+
+				/* Ajuste de la imagen de portada en el slider */
+				.mySlides {
+					width: 100%;
+				}
+
+				/* Ajustar el contenedor de texto */
+				#texto1 {
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+
+				#MKIII, #MKIV {
+					width: 90%; /* Ajustar el tamaño de los contenedores en móviles */
+					margin-left: 0;
+					margin-right: 0;
+					float: none;
+					display: block;
+					margin-bottom: 20px;
+				}
+
+				#imagen1, #imagen2 {
+					width: 70%; /* Reducir el tamaño de las imágenes para que se vean bien en móviles */
+					margin: 0 auto;
+					display: block;
+				}
+
+				/* Ajuste de los títulos */
+				h1 {
+					font-size: 28px;
+				}
+
+				/* Ajuste del tamaño de los párrafos */
+				p {
+					font-size: 16px;
+				}
+
+				/* Ajuste del espaciado entre elementos */
+				#refa {
+					margin-left: 0;
+				}
+			}
+
+			/* Ajustes para pantallas muy pequeñas (como en teléfonos en modo retrato) */
+			@media screen and (max-width: 480px) {
+				nav {
+					padding: 8px;
+				}
+
+				#MKI, #MKII {
+					width: 100%;
+					font-size: 16px;
+					margin: 8px 0;
+				}
+
+				#MKIII, #MKIV {
+					width: 90%;
+					margin: 10px 0;
+				}
+
+				/* Ajuste de imágenes */
+				#imagen1, #imagen2 {
+					width: 60%;
+				}
+
+				/* Ajustes de los textos */
+				h1 {
+					font-size: 24px;
+				}
+
+				p {
+					font-size: 14px;
+				}
+			}
 		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
@@ -133,19 +224,19 @@
 				<div id="MKII"><a href="reparacion.html">Reparación de piezas</a></div>
 				<div id="MKI"><a href="maquinados.html">Maquinados</a></div>
 			</nav>
-		<header>
+		</header>
 		<div class="w3-content w3-display-container" style="max-width:1400px">
 			<img class="mySlides" alt="Centridek portada" src="Centridek intro.gif" style="width:100%">
 			<img class="mySlides" alt="Centridek portada" src="Balanceo1.jpg" style="width:100%">
 			<img class="mySlides" alt="Centridek portada2" src="Maquinas2.jpg" style="width:100%">
 			<img class="mySlides" alt="Centridek portada3" src="Maquinas3.png" style="width:100%">
 			<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-			<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-			<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-		</div>
+				<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+				<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+			</div>
 		</div>
 		<script>
 			var slideIndex = 1;
@@ -222,3 +313,4 @@
 		</div>
 	</body>
 </html>
+
