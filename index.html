@@ -12,23 +12,22 @@
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
 		<style>
 			header {
-				margin: 0px;
+				margin: 0;
 			}
 			nav {
 				background-color: #212656;
-				height: 90px;
-				padding: 10px;
+				height: 10%;
+				padding: 2%;
 				text-align: center;
 				text-decoration: none;
-				margin: 0px;
+				margin: 0;
 			}
 			a {
 				font-family: 'Roboto', sans-serif;
 				text-align: justify;
 				color: white;
 				text-decoration: none;
-				margin-left;
-				font-size: 20px;
+				font-size: 2vw;
 			}
 			#MKI:hover {
 				background-color: #afc91f;
@@ -38,24 +37,23 @@
 			}
 			#MKI {
 				background-color: #212656;
-				height: 50px;
-				width: 100px;
-				border: solid 2px white;
+				height: 5%;
+				width: 10%;
+				border: solid 0.2vw white;
 				display: inline;
-				padding: 5px;
-				margin-left: 60px;
-				margin-right: 60px;
+				padding: 0.5vw;
+				margin-left: 4%;
+				margin-right: 4%;
 			}
 			#MKII {
 				background-color: #212656;
-				height: 50px;
-				width: 150px;
-				border: white;
+				height: 5%;
+				width: 15%;
+				border: solid 0.2vw white;
 				display: inline;
-				border: solid 2px white;
-				padding: 5px;
-				margin-left: 60px;
-				margin-right: 60px;
+				padding: 0.5vw;
+				margin-left: 4%;
+				margin-right: 4%;
 			}
 			.mySlides {
 				display: none;
@@ -64,76 +62,46 @@
 				cursor: pointer;
 			}
 			.w3-badge {
-				height: 13px;
-				width: 13px;
+				height: 1.3vw;
+				width: 1.3vw;
 				padding: 0;
 			}
 			#texto1 {
 				background-color: white;
-				padding: 0px;
+				padding: 0;
 				text-align: justify;
-				margin-bottom: 2px;
-				margin: 20px;
-				margin-left
+				margin-bottom: 2%;
+				margin: 2vw;
 			}
 			#texto2 {
 				text-align: justify;
 			}
-			#imagen1 {
-				margin-left: 140px;
+			#imagen1, #imagen2, #imagen3, #imagen4 {
+				margin-left: 10%;
 			}
-			#imagen2 {
-				margin-left: 60px;
-			}
-			#imagen3 {
-				margin-left: 80px;
-			}
-			#imagen4 {
-				margin-left: 80px;
-			}
-			#MKIII {
+			#MKIII, #MKIV, #MKV {
 				background-color: white;
-				height: 500px;
-				width: 500px;
+				height: 50%;
+				width: 40%;
 				border: none;
-				margin-left: 80px;
-				padding: 5px;
+				margin-left: 5%;
+				padding: 1vw;
 				float: left;
-			}
-			#MKIV {
-				background-color: white;
-				height: 500px;
-				width: 500px;
-				border: none;
-				margin-left: 80px;
-				padding: 5px;
-				float: right;
-				margin-right: 120px;
-			}
-			#MKV {
-				background-color: white;
-				height: 500px;
-				width: 500px;
-				border: none;
-				margin-left: 80px;
-				padding: 5px;
-				float: right;
-				margin-right: 120px;
 			}
 			h1 {
 				font-family: 'Sofia Sans Condensed', sans-serif;
 				text-align: justify;
 				color: #056d5f;
-				font-size: 40px;
-				margin-left: 50px;
+				font-size: 3vw;
+				margin-left: 5%;
 			}
 			p {
 				font-family: 'Roboto', sans-serif;
-				font-size: 20px;
+				font-size: 2vw;
 				text-align: justify;
 			}
 			#refa {
-				margin-left: 150px;
+				margin-left: 15%;
 			}
 			/* Estilo para el menú desplegable */
 			.dropdown {
@@ -144,33 +112,33 @@
 			.dropbtn {
 				background-color: #212656;
 				color: white;
-				padding: 15px;
-				font-size: 20px;
-				border: solid 2px white;
+				padding: 2vw;
+				font-size: 2vw;
+				border: solid 0.2vw white;
 				cursor: pointer;
 				display: inline-block;
-				width: 150px;
+				width: 15%;
 				text-align: center;
-				margin-left: 60px;
-				margin-right: 60px;
+				margin-left: 4%;
+				margin-right: 4%;
 			}
 
 			.dropdown-content {
 				display: none;
 				position: absolute;
 				background-color: #212656;
-				min-width: 160px;
+				min-width: 16%;
 				z-index: 1;
-				border-top: 1px solid white;
+				border-top: 0.2vw solid white;
 			}
 
 			.dropdown-content a {
 				color: white;
-				padding: 12px 16px;
+				padding: 1vw 1.5vw;
 				text-decoration: none;
 				display: block;
-				font-size: 18px;
-				border-bottom: 1px solid white;
+				font-size: 1.8vw;
+				border-bottom: 0.2vw solid white;
 			}
 
 			.dropdown-content a:hover {
@@ -187,92 +155,83 @@
 
 			/* Media Queries para Pantallas Pequeñas (Móviles) */
 			@media screen and (max-width: 768px) {
-				/* Ajustes en la barra de navegación para pantallas pequeñas */
 				nav {
-					padding: 10px;
+					padding: 5%;
 					text-align: center;
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
 				}
 				#MKI, #MKII {
-					width: 100%; /* Hacer que los botones ocupen el 100% del ancho */
+					width: 80%;
 					text-align: center;
-					margin: 5px 0; /* Espaciado adecuado entre botones */
-					font-size: 18px;
+					margin: 2% 0;
+					font-size: 4vw;
 				}
 
-				/* Ajuste de la imagen de portada en el slider */
 				.mySlides {
 					width: 100%;
 				}
 
-				/* Ajustar el contenedor de texto */
 				#texto1 {
-					margin-left: 10px;
-					margin-right: 10px;
+					margin-left: 3%;
+					margin-right: 3%;
 				}
 
-				#MKIII, #MKIV {
-					width: 90%; /* Ajustar el tamaño de los contenedores en móviles */
+				#MKIII, #MKIV, #MKV {
+					width: 80%;
 					margin-left: 0;
 					margin-right: 0;
 					float: none;
 					display: block;
-					margin-bottom: 20px;
+					margin-bottom: 5%;
 				}
 
 				#imagen1, #imagen2 {
-					width: 70%; /* Reducir el tamaño de las imágenes para que se vean bien en móviles */
+					width: 70%;
 					margin: 0 auto;
 					display: block;
 				}
 
-				/* Ajuste de los títulos */
 				h1 {
-					font-size: 28px;
+					font-size: 5vw;
 				}
 
-				/* Ajuste del tamaño de los párrafos */
 				p {
-					font-size: 16px;
+					font-size: 4vw;
 				}
 
-				/* Ajuste del espaciado entre elementos */
 				#refa {
 					margin-left: 0;
 				}
 			}
 
-			/* Ajustes para pantallas muy pequeñas (como en teléfonos en modo retrato) */
 			@media screen and (max-width: 480px) {
 				nav {
-					padding: 8px;
+					padding: 3%;
 				}
 
 				#MKI, #MKII {
 					width: 100%;
-					font-size: 16px;
-					margin: 8px 0;
+					font-size: 4vw;
+					margin: 5% 0;
 				}
 
 				#MKIII, #MKIV {
 					width: 90%;
-					margin: 10px 0;
+					margin: 5% 0;
 				}
 
-				/* Ajuste de imágenes */
 				#imagen1, #imagen2, #imagen3, #imagen4 {
-					width: 60%;
+					width: 80%;
 				}
 
-				/* Ajustes de los textos */
 				h1 {
-					font-size: 24px;
+					font-size: 6vw;
 				}
 
 				p {
-					font-size: 14px;
+					font-size: 5vw;
 				}
 			}
 		</style>
@@ -283,7 +242,7 @@
 	<body>
 		<header>
 			<nav>
-				<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:70"></a>
+				<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:20%"></a>
 				<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
 				<!-- Menú desplegable para "Servicios" -->
 				<div class="dropdown">
@@ -298,7 +257,7 @@
 				<div id="MKI"><a href="ventas.html">Ventas</a></div>
 			</nav>
 		</header>
-		<div class="w3-content w3-display-container" style="max-width:1400px">
+		<div class="w3-content w3-display-container" style="max-width:100%">
 			<img class="mySlides" alt="Centridek portada" src="Centridek intro.gif" style="width:100%">
 			<img class="mySlides" alt="Centridek portada2" src="Balanceo1.jpg" style="width:100%">
 			<img class="mySlides" alt="Centridek portada3" src="Maquinas2.jpg" style="width:100%">
