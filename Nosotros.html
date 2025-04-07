@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="icon"type="image/png" href= "Logo flat.png"/>
+		<link rel="icon"type="image/png" href="Logo flat.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<meta charset="UTF-8">
@@ -45,7 +45,7 @@
 				padding:5px;
 				margin-left:60px;
 				margin-right:60px;
-				}
+			}
 			#MKII{
 				background-color:#212656;
 				height:50px;
@@ -114,12 +114,12 @@
 				padding:5px;
 				margin-left:80px;
 				margin-right:80px;
-				}
-				#envio{
-					color:white;
-					background-color:#afc91f;
-					border-radius:15%;
-				}
+			}
+			#envio{
+				color:white;
+				background-color:#afc91f;
+				border-radius:15%;
+			}
 			h1{
 				font-family: 'Sofia Sans Condensed', sans-serif;
 				text-align:justify;
@@ -202,6 +202,35 @@
 			#img{
 				margin-left:300px
 			}
+			/* Dropdown menu */
+			.dropdown {
+				display: inline-block;
+				position: relative;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #212656;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+				z-index: 1;
+			}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+
+			.dropdown-content a {
+				color: white;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+			}
+
+			.dropdown-content a:hover {
+				background-color: #afc91f;
+			}
 		</style>
 		<title>
 			CENTRIDEK
@@ -210,19 +239,29 @@
 	<body>
 		<header>
 			<nav>
-				<a id= "logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style= "width:70"></a>
+				<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:70"></a>
 				<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
-				<div id="MKI"><a href="Servicios.html">Servicios</a></div>
+				
+				<!-- Dropdown menu for Servicios -->
+				<div class="dropdown">
+					<a href="Servicios.html">Servicios</a>
+					<div class="dropdown-content">
+						<a href="#">Mantenimiento</a>
+						<a href="#">Metalmecánico</a>
+						<a href="#">Balanceos</a>
+						<a href="#">Reparación de Refacciones</a>
+					</div>
+				</div>
+				
 				<div id="MKI"><a href="ventas.html">Ventas</a></div>
 			</nav>
 		</header>
 		<div>
-		<DIV id="MKVI" style="position: absolute;left:600;top:200">NOSOTROS</DIV>
-		<DIV id="MKVII" style="position: absolute;left:595;top:240">¿Quiénes somos?</DIV>
-				<img alt="Centridek portada" src="Centridek.png" style="width:100%">
+			<DIV id="MKVI" style="position: absolute;left:600;top:200">NOSOTROS</DIV>
+			<DIV id="MKVII" style="position: absolute;left:595;top:240">¿Quiénes somos?</DIV>
+			<img alt="Centridek portada" src="Centridek.png" style="width:100%">
 		</div>
-		<br>
-		</br>
+		<br></br>
 		<div id="MKIX">
 			<article>
 			<img alt="La misión de la empresa" id="Misión" src="Misión.png" style= "width:90">
@@ -253,48 +292,36 @@
 			<p>
 				En Centridek, aspiramos a ser reconocidos como una empresa líder en el ámbito del 
 				mantenimiento industrial, tanto a nivel nacional como internacional, 
-				distinguiéndonos por nuestra confiabilidad, honestidad y calidad en cada uno de 
-				nuestros servicios. Nuestro objetivo es convertirnos en la primera opción para las 
-				empresas que buscan eficiencia, cumplimiento y soluciones técnicas de alto nivel.
+				distinguiéndonos por nuestra confiabilidad, honestidad y excelencia en el servicio. 
+				Queremos ser el referente en innovación y eficiencia, ofreciendo soluciones que superen 
+				siempre las expectativas de nuestros clientes.
 			</p>
 			<p>
-				Nos comprometemos a cumplir de manera puntual con cada servicio solicitado, ofreciendo 
-				atención cercana, profesional y orientada al beneficio de nuestros clientes. Nuestra 
-				visión está enfocada en generar confianza, fortalecer alianzas estratégicas y contribuir 
-				al desarrollo sostenible de nuestros socios comerciales.
+				Nos visualizamos como una organización en constante crecimiento, con una cartera de 
+				clientes diversificada y leal, y un equipo humano altamente capacitado y comprometido 
+				con nuestra misión. Trabajaremos para expandir nuestra presencia en nuevos mercados 
+				y sectores, contribuyendo al desarrollo económico y la sostenibilidad industrial.
 			</p>
 			</article>
 		</div>
 		<div id="MKVIII">
 			<article>
-			<img alt="Los valores de la empresa" id="Valor" src="Valor.png" style= "width:90">
+			<img alt="Los valores de la empresa" id="Valor" src="Valores.png" style= "width:90">
 			<h1 id="valores">
 				VALORES
 			</h1>
-			<p> 
-				En Centridek, nos regimos por valores fundamentales que definen nuestra forma de trabajar y 
-				que consideramos indispensables para construir relaciones sólidas, honestas y duraderas con 
-				nuestros clientes. Estos principios inspiran cada acción y reflejan nuestro compromiso con la 
-				excelencia.
-			</p>
 			<p>
-				Responsabilidad: Asumimos nuestros compromisos con profesionalismo, seriedad y conciencia del impacto 
-				de cada acción.
+				En Centridek, nuestros valores fundamentales son:
 			</p>
-			<p>
-				Puntualidad: Cumplimos rigurosamente con los plazos establecidos, respetando el tiempo de nuestros 
-				clientes.
-			</p>
-			<p>
-				Calidad: Entregamos productos y servicios que cumplen con altos estándares técnicos y operativos.
-			</p>
-			<p> 
-				Honestidad: Actuamos con total transparencia, construyendo confianza en cada interacción y decisión.
-			</p>
+			<ul>
+				<li>Calidad: Nos comprometemos a ofrecer los mejores servicios y productos.</li>
+				<li>Compromiso: Establecemos relaciones de confianza y cumplimiento con nuestros clientes.</li>
+				<li>Innovación: Buscamos siempre soluciones más eficaces y sostenibles.</li>
+				<li>Responsabilidad: Actuamos con ética y transparencia en todas nuestras decisiones.</li>
+			</ul>
 			</article>
 		</div>
-		
-		<div id="MKIII">
+		<div id="MKIV">
 			<article>
 			<h1 id="refa">
 				CONTÁCTANOS
