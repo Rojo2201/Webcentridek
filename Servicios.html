@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="icon"type="image/png" href= "favicon.png"/>
+		<link rel="icon"type="image/png" href= "Logo flat.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<meta charset="UTF-8">
@@ -163,13 +163,21 @@
 	<body>
 		<header>
 			<nav>
-				<a id= "logo" href="index.html"><img alt="Centridek logo" src="centridek.png" style= "width:70"></a>
+				<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:5%"></a>
 				<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
-				<div id="MKV"><a href="Servicios.html">Servicios</a></div>
+				<!-- Menú desplegable para "Servicios" -->
+				<div class="dropdown">
+					<div id="MKII" class="dropbtn"><a href="Servicios.html">Servicios</a></div>
+					<div class="dropdown-content">
+						<a href="Mantenimiento.html">Mantenimiento</a>
+						<a href="Metalmecanico.html">Metalmecánico</a>
+						<a href="N/A">Balanceos</a>
+						<a href="N/A">Reparación de refacciones</a>
+					</div>
+				</div>
 				<div id="MKI"><a href="ventas.html">Ventas</a></div>
-				<div id="MKII"><a href="reparacion.html">Reparación de piezas</a></div>
 			</nav>
-		<header>
+		</header>
 		<div>
 		<DIV id="MKVI" style="position: absolute;left:600;top:200">SERVICIOS</DIV>
 		<DIV id="MKVII" style="position: absolute;left:540;top:240">¿De qué tamaño es tu máquina?</DIV>
@@ -177,10 +185,17 @@
 		</div>
 		<article id="texto1">
 			<p id="txt">
-			Los servicios que podemos brindar varían dependiendo del tipo de máquina que se le solicite dar
-			el servicio, esto será en función de su tamaño, para brindarle un mejor servicio hemos separado 
-			las máquinas en 2 tipos: grandes y pequeñas, de acuerdo a esto, nosotros podremos saber ló que 
-			requerirá tu maquina.
+				Los servicios que podemos brindar varían dependiendo del tipo de máquina que se le solicite dar
+				En Centridek, comprendemos que cada equipo requiere una atención específica según sus características 
+				técnicas y dimensiones. Por ello, hemos clasificado nuestras atenciones en dos categorías principales: 
+				maquinaria grande y maquinaria pequeña, lo que nos permite adaptar nuestros procesos y ofrecer un servicio 
+				más preciso, eficiente y acorde a las necesidades de cada cliente.
+			</p>
+			<p>
+				Además de los servicios de mantenimiento general, contamos con soluciones especializadas como balanceo dinámico, 
+				reparación y reacondicionamiento de refacciones, así como servicios metalmecánicos de precisión. Estos servicios 
+				complementarios nos permiten garantizar un funcionamiento óptimo, prolongar la vida útil de los equipos y brindar 
+				un soporte técnico integral para cada tipo de máquina.
 			</p>
 		</article>
 		<br></br>
