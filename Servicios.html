@@ -19,6 +19,10 @@
       --texto-claro: #e0e1dd;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -46,6 +50,9 @@
       flex-wrap: wrap;
       animation: fadeInDown 1s ease;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     @keyframes fadeInDown {
@@ -78,6 +85,15 @@
       min-width: 180px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .dropdown-content a {
@@ -85,6 +101,7 @@
       padding: 12px 16px;
       text-decoration: none;
       display: block;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .dropdown-content a:hover {
@@ -92,15 +109,11 @@
       color: white;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
     #MKV {
       background-color: var(--verde-lima);
       padding: 0.5em 1em;
       border: solid 2px white;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     #MKV:hover {
@@ -116,6 +129,7 @@
       max-width: 90%;
       margin: auto;
       padding: 5% 3%;
+      animation: fadeIn 1.2s ease;
     }
 
     .section {
@@ -136,6 +150,12 @@
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
       transition: transform 0.4s ease;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .column:hover {
@@ -168,46 +188,6 @@
       transform: scale(1.1);
     }
 
-    .cta-final {
-      text-align: center;
-      background-color: var(--azul-profundo);
-      color: white;
-      padding: 5% 3%;
-      border-radius: 16px;
-      margin-top: 5%;
-    }
-
-    .cta-final h3 {
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-
-    .cta-final a {
-      background-color: var(--verde-lima);
-      padding: 1em 2em;
-      font-size: 1.2em;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--azul-profundo);
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-final a:hover {
-      background-color: #d3e659;
-    }
-
-    .icon {
-      width: 28px;
-      vertical-align: middle;
-      margin-right: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    li:hover .icon {
-      transform: scale(1.2);
-    }
-
     .highlight-title {
       text-align: center;
       font-size: 4em;
@@ -216,19 +196,9 @@
       color: var(--verde-oscuro);
     }
 
-    .why-choose ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      font-size: 1.6em;
-      gap: 2em;
-    }
-
-    .why-choose li {
-      flex: 1 1 40%;
-      margin: 1em;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media (max-width: 768px) {
@@ -256,19 +226,6 @@
         margin-bottom: 10%;
       }
 
-      .why-choose ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .icon {
-        width: 32px;
-      }
-
-      ul li {
-        font-size: 1.1em;
-      }
-
       .cta-button {
         font-size: 1.1em;
         padding: 10px 16px;
@@ -277,30 +234,46 @@
   </style>
 </head>
 <body>
-  <!-- Agregamos el nuevo contenido aquí -->
-  <section class="container">
-    <h1 class="highlight-title">Servicios según tipo de máquina</h1>
-    <div class="columns">
-      <div class="column">
-        <h2>Centrífugas</h2>
-        <ul>
-          <li><img src="iconos/balanceo.png" class="icon" alt="Balanceo">Balanceo dinámico de rotores</li>
-          <li><img src="iconos/refacciones.png" class="icon" alt="Refacciones">Reparación de refacciones</li>
-          <li><img src="iconos/torno.png" class="icon" alt="Metalmecánico">Servicio metalmecánico a medida</li>
-        </ul>
-        <a class="cta-button" href="#">Conoce más</a>
+  <header>
+    <nav>
+      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <div class="dropdown">
+          <a href="#">Servicios</a>
+          <div class="dropdown-content">
+            <a href="#preventivo">Mantenimiento Preventivo</a>
+            <a href="#correctivo">Mantenimiento Correctivo</a>
+          </div>
+        </div>
+        <a href="contacto.html" id="MKV">Contáctanos</a>
       </div>
-      <div class="column">
-        <h2>Decantadoras</h2>
+    </nav>
+  </header>
+  <section class="container">
+    <h1 class="highlight-title">Servicios de Mantenimiento</h1>
+    <div class="columns">
+      <div class="column" id="preventivo">
+        <h2>Mantenimiento Preventivo</h2>
         <ul>
-          <li><img src="iconos/balanceo.png" class="icon" alt="Balanceo">Balanceo de componentes rotativos</li>
-          <li><img src="iconos/refacciones.png" class="icon" alt="Refacciones">Rehabilitación de piezas críticas</li>
-          <li><img src="iconos/torno.png" class="icon" alt="Metalmecánico">Servicios de maquinado y soldadura</li>
+          <li><img src="iconos/balanceo.png" class="icon" alt="Balanceo">Cambio de juntas, baleros y retenes</li>
+          <li><img src="iconos/refacciones.png" class="icon" alt="Refacciones">Revisión de ajustes y parametros de la maquina</li>
+          <li><img src="iconos/torno.png" class="icon" alt="Metalmecánico">Lubricación y limpieza de componentes</li>
         </ul>
-        <a class="cta-button" href="#">Conoce más</a>
+        <a class="cta-button" href="contacto.html">Conoce más</a>
+      </div>
+      <div class="column" id="correctivo">
+        <h2>Mantenimiento Correctivo</h2>
+        <ul>
+          <li><img src="iconos/balanceo.png" class="icon" alt="Balanceo">Reparación de fallas</li>
+          <li><img src="iconos/refacciones.png" class="icon" alt="Refacciones">Reemplazo de refacciones dañadas</li>
+          <li><img src="iconos/torno.png" class="icon" alt="Metalmecánico">Reparación de piezas</li>
+        </ul>
+        <a class="cta-button" href="contacto.html">Contáctanos</a>
       </div>
     </div>
   </section>
 </body>
 </html>
+
 
