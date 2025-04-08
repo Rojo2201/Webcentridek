@@ -9,18 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --verde-lima: #afc91f;
+      --azul-profundo: #003d6f;
+      --azul-intermedio: #0072b1;
+      --verde-agua: #339a9d;
+      --verde-oscuro: #2b6e67;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f7f7f7;
-      color: #333;
+      background-color: #f0f7f6;
+      color: #1a1a1a;
     }
     header {
       margin: 0;
     }
     nav {
-      background-color: #212656;
+      background-color: var(--azul-profundo);
       padding: 1.5% 2%;
       text-align: center;
     }
@@ -35,13 +43,13 @@
       display: inline-block;
       padding: 0.5em 1em;
       border: solid 2px white;
-      background-color: #212656;
+      background-color: var(--azul-profundo);
     }
-    #MKV:hover {
-      background-color: #afc91f;
+    #MKV {
+      background-color: var(--verde-lima);
     }
     #MKI:hover, #MKII:hover {
-      background-color: #afc91f;
+      background-color: var(--verde-lima);
     }
     h1, h2, h3 {
       font-family: 'Sofia Sans Condensed', sans-serif;
@@ -49,7 +57,7 @@
     .container {
       max-width: 90%;
       margin: auto;
-      padding: 5% 0;
+      padding: 5% 3%;
     }
     .section {
       margin-bottom: 10%;
@@ -62,10 +70,10 @@
     }
     .column {
       flex: 1 1 45%;
-      background-color: #fff;
+      background: linear-gradient(to bottom right, #ffffff, #d7f0ef);
       padding: 5%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
     ul {
       padding-left: 5%;
@@ -77,20 +85,66 @@
       display: inline-block;
       margin-top: 10%;
       padding: 3% 6%;
-      background-color: #004a7c;
+      background-color: var(--azul-profundo);
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 12px;
       transition: background-color 0.3s ease;
       font-size: 1em;
+      font-weight: bold;
     }
     .cta-button:hover {
-      background-color: #0072b1;
+      background-color: var(--azul-intermedio);
+    }
+    .cta-final {
+      text-align: center;
+      background-color: var(--azul-profundo);
+      color: white;
+      padding: 5% 3%;
+      border-radius: 16px;
+      margin-top: 5%;
+    }
+    .cta-final h3 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    .cta-final a {
+      background-color: var(--verde-lima);
+      padding: 1em 2em;
+      font-size: 1.2em;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--azul-profundo);
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .cta-final a:hover {
+      background-color: #d3e659;
     }
     .icon {
-      width: 24px;
+      width: 28px;
       vertical-align: middle;
       margin-right: 8px;
+      transition: transform 0.3s ease;
+    }
+    li:hover .icon {
+      transform: scale(1.2);
+    }
+    .highlight-title {
+      text-align: center;
+      font-size: 3.5em;
+      font-weight: bold;
+      margin-top: 5%;
+      color: var(--verde-oscuro);
+    }
+    .why-choose ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      font-size: 1.6em;
+    }
+    .why-choose li {
+      margin: 1em 0;
     }
     @media (max-width: 768px) {
       .columns {
@@ -99,6 +153,23 @@
       nav a {
         display: block;
         margin: 5px auto;
+      }
+      .highlight-title {
+        font-size: 2.5em;
+        padding: 0 5%;
+      }
+      .column {
+        margin-bottom: 10%;
+      }
+      .icon {
+        width: 32px;
+      }
+      ul li {
+        font-size: 1.1em;
+      }
+      .cta-button {
+        font-size: 1.1em;
+        padding: 10px 16px;
       }
     }
   </style>
@@ -114,46 +185,51 @@
   </header>
   <div class="container">
     <section class="section">
-      <h2>Servicios según tipo de equipo</h2>
-      <p>En <strong>Centridek</strong>, adaptamos nuestros servicios técnicos de acuerdo con el tipo de maquinaria que utiliza tu operación. Para ofrecer una atención precisa y especializada, diferenciamos nuestros servicios en dos categorías clave: <strong>centrífugas</strong> y <strong>decantadoras</strong>. Esta división nos permite atender cada equipo con el enfoque adecuado, asegurando una intervención técnica eficaz y alineada con tus necesidades.</p>
+      <h2>Mantenimiento preventivo y correctivo</h2>
+      <p>En <strong>Centridek</strong>, ofrecemos mantenimiento preventivo y correctivo adaptado al tipo de maquinaria que utiliza tu operación. Nuestros servicios están diseñados para asegurar un rendimiento confiable y prolongado en el tiempo, interviniendo de manera oportuna según las necesidades técnicas de cada componente.</p>
     </section>
 
     <section class="section">
       <div class="columns">
         <div class="column">
-          <h3><img src="centrifuga-icon.png" class="icon" alt="Icono centrífuga">Centrífugas</h3>
-          <p>Equipos que requieren alta precisión, balanceo dinámico y mantenimiento detallado para garantizar su óptimo rendimiento rotativo.</p>
+          <h3><img src="centrifuga-icon.png" class="icon" alt="Icono centrífuga">Mantenimiento Preventivo</h3>
+          <p>Servicios diseñados para prolongar la vida útil de tus equipos y prevenir fallas operativas.</p>
           <ul>
             <li><img src="balanceo-icon.png" class="icon" alt="Balanceo">Balanceo dinámico de componentes</li>
-            <li><img src="reparacion-icon.png" class="icon" alt="Reparación">Reparación de refacciones</li>
-            <li><img src="metalmecanico-icon.png" class="icon" alt="Metalmecánico">Servicios metalmecánicos</li>
-            <li><img src="mantenimiento-icon.png" class="icon" alt="Mantenimiento">Mantenimiento general especializado</li>
+            <li><img src="reparacion-icon.png" class="icon" alt="Reparación">Revisión y ajuste de refacciones</li>
+            <li><img src="metalmecanico-icon.png" class="icon" alt="Metalmecánico">Servicios metalmecánicos ligeros</li>
+            <li><img src="mantenimiento-icon.png" class="icon" alt="Mantenimiento">Mantenimiento general programado</li>
           </ul>
           <a href="#contacto" class="cta-button">Solicita mantenimiento</a>
         </div>
         <div class="column">
-          <h3><img src="decantadora-icon.png" class="icon" alt="Icono decantadora">Decantadoras</h3>
-          <p>Equipos que requieren revisiones estructurales más profundas y soluciones técnicas robustas para una operación segura y continua.</p>
+          <h3><img src="decantadora-icon.png" class="icon" alt="Icono decantadora">Mantenimiento Correctivo</h3>
+          <p>Soluciones técnicas profundas enfocadas en recuperar el funcionamiento de equipos averiados.</p>
           <ul>
             <li><img src="balanceo-icon.png" class="icon" alt="Balanceo">Balanceo de rotores y tambores</li>
             <li><img src="reparacion-icon.png" class="icon" alt="Reacondicionamiento">Reacondicionamiento de piezas clave</li>
             <li><img src="metalmecanico-icon.png" class="icon" alt="Metalmecánico">Ajustes metalmecánicos de precisión</li>
-            <li><img src="mantenimiento-icon.png" class="icon" alt="Mantenimiento">Mantenimiento técnico integral</li>
+            <li><img src="mantenimiento-icon.png" class="icon" alt="Mantenimiento">Reparación y pruebas funcionales</li>
           </ul>
           <a href="#contacto" class="cta-button">Contáctanos para cotizar</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h3>¿Por qué elegir Centridek?</h3>
+    <section class="section why-choose">
+      <h3 class="highlight-title">¿Por qué elegir Centridek?</h3>
       <ul>
         <li>Especialistas en centrífugas y decantadoras</li>
         <li>Diagnóstico técnico confiable</li>
-        <li>Servicios integrales en un solo lugar</li>
+        <li><img src="servicios-icon.png" class="icon" alt="Icono servicios">Servicios integrales en un solo lugar</li>
         <li>Refacciones originales y procesos certificados</li>
         <li>Atención personalizada y puntual</li>
       </ul>
+    </section>
+
+    <section class="cta-final">
+      <h3>¿Listo para dar mantenimiento a tu equipo?</h3>
+      <a href="#contacto">Solicita tu diagnóstico</a>
     </section>
   </div>
 </body>
