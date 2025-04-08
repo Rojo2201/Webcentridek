@@ -1,353 +1,344 @@
-<html>
-	<head>
-		<link rel="icon" type="image/png" href="Logo flat.png"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<meta charset="UTF-8">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
-		<style>
-			header {
-				margin: 0;
-			}
-			nav {
-				background-color: #212656;
-				height: 15vh;
-				padding:2vh;
-				text-align: center;
-				text-decoration: none;
-				margin: 0;
-			}
-			a {
-				font-family: 'Roboto', sans-serif;
-				text-align: justify;
-				color: white;
-				text-decoration: none;
-				font-size: 2vw;
-			}
-			#MKI:hover {
-				background-color: #afc91f;
-			}
-			#MKII:hover {
-				background-color: #afc91f;
-			}
-			#MKI {
-				background-color: #212656;
-				height: 5%;
-				width: 10%;
-				border: solid 0.2vw white;
-				display: inline;
-				padding: 0.5vw;
-				margin-left: 4%;
-				margin-right: 4%;
-			}
-			#MKII {
-				background-color: #212656;
-				height: 5%;
-				width: 15%;
-				border: solid 0.2vw white;
-				display: inline;
-				padding: 0.5vw;
-				margin-left: 4%;
-				margin-right: 4%;
-			}
-			.mySlides {
-				display: none;
-			}
-			.w3-left, .w3-right, .w3-badge {
-				cursor: pointer;
-			}
-			.w3-badge {
-				height: 1.3vw;
-				width: 1.3vw;
-				padding: 0;
-			}
-			#texto1 {
-				background-color: white;
-				padding: 0;
-				text-align: justify;
-				margin-bottom: 2%;
-				margin: 2vw;
-			}
-			#texto2 {
-				text-align: justify;
-			}
-			#imagen1, #imagen2, #imagen3, #imagen4 {
-				margin-left: 10%;
-			}
-			#MKIII, #MKIV, #MKV {
-				background-color: white;
-				height: 50%;
-				width: 40%;
-				border: none;
-				margin-left: 5%;
-				padding: 1vw;
-				float: left;
-			}
-			h1 {
-				font-family: 'Sofia Sans Condensed', sans-serif;
-				text-align: justify;
-				color: #056d5f;
-				font-size: 3vw;
-				margin-left: 5%;
-			}
-			p {
-				font-family: 'Roboto', sans-serif;
-				font-size: 2vw;
-				text-align: justify;
-			}
-			#refa {
-				margin-left: 15%;
-			}
-			/* Estilo para el menú desplegable */
-			.dropdown {
-				position: relative;
-				display: inline-block;
-			}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-lima: #afc91f;
+      --azul-profundo: #003d6f;
+      --azul-intermedio: #0072b1;
+      --verde-agua: #339a9d;
+      --verde-oscuro: #2b6e67;
+      --fondo-oscuro: #0d1b2a;
+      --texto-claro: #e0e1dd;
+    }
 
-			.dropbtn {
-				background-color: #212656;
-				color: white;
-				padding: 2vw;
-				font-size: 2vw;
-				border: solid 0.2vw white;
-				cursor: pointer;
-				display: inline-block;
-				width: 15%;
-				text-align: center;
-				margin-left: 4%;
-				margin-right: 4%;
-			}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f7f6;
+      color: #1a1a1a;
+      scroll-behavior: smooth;
+    }
 
-			.dropdown-content {
-				display: none;
-				position: absolute;
-				background-color: #212656;
-				min-width: 16%;
-				z-index: 1;
-				border-top: 0.2vw solid white;
-			}
+    header {
+      margin: 0;
+    }
 
-			.dropdown-content a {
-				color: white;
-				padding: 1vw 1.5vw;
-				text-decoration: none;
-				display: block;
-				font-size: 1.8vw;
-				border-bottom: 0.2vw solid white;
-			}
+    nav {
+      background-color: var(--azul-profundo);
+      padding: 1.5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 0.6s ease-out;
+    }
 
-			.dropdown-content a:hover {
-				background-color: #afc91f;
-			}
+    nav a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
+    }
 
-			.dropdown:hover .dropdown-content {
-				display: block;
-			}
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
 
-			.dropdown:hover .dropbtn {
-				background-color: #afc91f;
-			}
+    .dropdown {
+      position: relative;
+    }
 
-			/* Media Queries para Pantallas Pequeñas (Móviles) */
-			@media screen and (max-width: 768px) {
-				nav {
-					padding: 5%;
-					text-align: center;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-				}
-				#MKI, #MKII {
-					width: 80%;
-					text-align: center;
-					margin: 2% 0;
-					font-size: 4vw;
-				}
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
 
-				.mySlides {
-					width: 100%;
-				}
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-				#texto1 {
-					margin-left: 3%;
-					margin-right: 3%;
-				}
+    .dropdown-content a {
+      color: var(--azul-profundo);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
 
-				#MKIII, #MKIV, #MKV {
-					width: 80%;
-					margin-left: 0;
-					margin-right: 0;
-					float: none;
-					display: block;
-					margin-bottom: 5%;
-				}
+    .dropdown-content a:hover {
+      background-color: var(--verde-agua);
+      color: white;
+    }
 
-				#imagen1, #imagen2 {
-					width: 70%;
-					margin: 0 auto;
-					display: block;
-				}
+    #MKV {
+      background-color: var(--verde-lima);
+      border: solid 2px white;
+    }
 
-				h1 {
-					font-size: 5vw;
-				}
+    #MKV:hover {
+      background-color: #d3e659;
+      transform: scale(1.1);
+    }
 
-				p {
-					font-size: 2vw;
-				}
+    .slider {
+      max-width: 100%;
+      position: relative;
+      animation: fadeIn 2s ease-in;
+    }
+    .mySlides {
+      display: none;
+      width: 100%;
+    }
+    .dots {
+      text-align: center;
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+    }
+    .w3-badge {
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
 
-				#refa {
-					margin-left: 0;
-				}
-			}
+    section.intro {
+      padding: 2rem;
+      background-color: white;
+      max-width: 1200px;
+      margin: 4rem auto;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      animation: fadeInUp 1.2s ease-in;
+    }
 
-			@media screen and (max-width: 480px) {
-				nav {
-					padding: 3%;
-				}
+    .intro a.boton-servicios {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: var(--azul-intermedio);
+      color: white;
+      font-size: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
 
-				#MKI, #MKII {
-					width: 100%;
-					font-size: 4vw;
-					margin: 5% 0;
-				}
+    .intro a.boton-servicios:hover {
+      background-color: var(--verde-agua);
+    }
 
-				#MKIII, #MKIV {
-					width: 90%;
-					margin: 5% 0;
-				}
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+    .card {
+      background: linear-gradient(to bottom right, #ffffff, #d7f0ef);
+      padding: 1.5rem;
+      width: 280px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 60%;
+      margin-bottom: 1rem;
+    }
+    .card h2 {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      color: var(--verde-oscuro);
+      font-size: 1.5rem;
+    }
 
-				#imagen1, #imagen2, #imagen3, #imagen4 {
-					width: 80%;
-				}
+    footer {
+      background-color: var(--azul-profundo);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    footer .redes {
+      margin-top: 1rem;
+    }
+    footer .redes a {
+      margin: 0 10px;
+      display: inline-block;
+      color: white;
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+    footer .redes a:hover {
+      transform: scale(1.3);
+      color: var(--verde-lima);
+    }
 
-				h1 {
-					font-size: 6vw;
-				}
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1em;
+      }
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
-				p {
-					font-size: 5vw;
-				}
-			}
-		</style>
-		<title>
-			CENTRIDEK
-		</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:5%"></a>
-				<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
-				<!-- Menú desplegable para "Servicios" -->
-				<div class="dropdown">
-					<div id="MKII" class="dropbtn"><a href="Servicios.html">Servicios</a></div>
-					<div class="dropdown-content">
-						<a href="Mantenimiento.html">Mantenimiento</a>
-						<a href="Metalmecanico.html">Metalmecánico</a>
-						<a href="N/A">Balanceos</a>
-						<a href="N/A">Reparación de refacciones</a>
-					</div>
-				</div>
-				<div id="MKI"><a href="ventas.html">Ventas</a></div>
-			</nav>
-		</header>
-		<div class="w3-content w3-display-container" style="max-width:100%">
-			<img class="mySlides" alt="Centridek portada" src="Centridek intro.gif" style="width:100%">
-			<img class="mySlides" alt="Centridek portada2" src="Balanceo1.jpg" style="width:100%">
-			<img class="mySlides" alt="Centridek portada3" src="Maquinas2.jpg" style="width:100%">
-			<img class="mySlides" alt="Centridek portada4" src="Maquinas3.png" style="width:100%">
-			<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-				<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-				<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-			</div>
-		</div>
-		<script>
-			var slideIndex = 1;
-			showDivs(slideIndex);
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav>
+      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
+      <div class="nav-links">
+        <a href="Nosotros.html">Nosotros</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Servicios</a>
+          <div class="dropdown-content">
+            <a href="Mantenimiento.html">Mantenimiento</a>
+            <a href="Metalmecanico.html">Metalmecánico</a>
+            <a href="Balanceo.html">Balanceos</a>
+            <a href="Refacciones.html">Reparación de refacciones</a>
+          </div>
+        </div>
+        <a href="ventas.html">Ventas</a>
+        <a href="contacto.html" id="MKV">Contáctanos</a>
+      </div>
+    </nav>
+  </header>
 
-			function plusDivs(n) {
-				showDivs(slideIndex += n);
-			}
+  <div class="slider w3-content w3-display-container">
+    <img class="mySlides" src="Centridek intro.gif" alt="Slide 1">
+    <img class="mySlides" src="Balanceo1.jpg" alt="Slide 2">
+    <img class="mySlides" src="Maquinas2.jpg" alt="Slide 3">
+    <img class="mySlides" src="Maquinas3.png" alt="Slide 4">
 
-			function currentDiv(n) {
-				showDivs(slideIndex = n);
-			}
+    <div class="w3-center dots">
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+    </div>
+  </div>
 
-			function showDivs(n) {
-				var i;
-				var x = document.getElementsByClassName("mySlides");
-				var dots = document.getElementsByClassName("demo");
-				if (n > x.length) {slideIndex = 1}
-				if (n < 1) {slideIndex = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";  
-				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" w3-white", "");
-				}
-				x[slideIndex-1].style.display = "block";  
-				dots[slideIndex-1].className += " w3-white";
-			}
+  <section class="intro">
+    <p>Somos una empresa joven en el mercado, pero con una sólida trayectoria respaldada por años de experiencia en el sector, lo cual nos permite garantizar la satisfacción de nuestros clientes en cada uno de nuestros servicios.</p>
+    <br>
+    <p>Nos esforzamos día con día por brindar un trato profesional, cercano y personalizado, con el objetivo de generar confianza y construir relaciones laborales duraderas.</p>
+    <a class="boton-servicios" href="Mantenimiento.html">Ver servicios</a>
+  </section>
 
-			// Automático: Cambiar imagen cada 20 segundos
-			setInterval(function() {
-				plusDivs(1); // Cambia a la siguiente imagen
-			}, 15000); // 20000ms = 20 segundos
-		</script>
-		<article id="texto1">
-			<p>
-			Somos una empresa joven en el mercado, pero con una sólida trayectoria respaldada por años de 
-			experiencia en el sector, lo cual nos permite garantizar la satisfacción de nuestros clientes 
-			en cada uno de nuestros servicios. Contamos con un equipo de técnicos altamente capacitados y 
-			comprometidos, quienes respaldan nuestro trabajo y aseguran la entrega de resultados con los 
-			más altos estándares de calidad.
-			</p>
-		</article>
-		<article id="texto1">
-			<p>
-			Nos esforzamos día con día por brindar un trato profesional, cercano y personalizado, con el 
-			objetivo de generar confianza y construir relaciones laborales duraderas. Nuestra principal 
-			meta es que cada cliente se sienta plenamente satisfecho y reciba siempre el mayor beneficio 
-			como parte fundamental de nuestra filosofía de servicio.
-			</p>
-		</article>
-		<br></br>
-		<br></br>
-		<div id="MKIII">
-			<article>
-			<a href="N/A" target="_blank" ><img id="imagen1" src="Refacción.png" alt="Portada de sonic generations" style="width:40%"></a>
-			<h1 id="refa">REFACCIONES</h1>
-			</article>
-		</div>
-		<div id="MKIV">
-			<article>
-			<a href="N/A" target="_blank"><img id="imagen2" src="Centrifuga.png" style="width:60%"></a>
-			<h1>MANTENIMIENTOS</h1>
-			</article>
-		</div>
-		<div id="MKIII">
-			<article>
-			<a href="N/A" target="_blank"><img id="imagen3" src="Balanceo.png" style="width:60%"></a>
-			<h1 id="refa">BALANCEOS</h1>
-			</article>
-		</div>
-		<div id="MKV">
-			<article>
-			<a href="N/A" target="_blank"><img id="imagen4" src="Metalmecanico.png" style="width:60%"></a>
-			<h1>SERVICIOS METALMECANICOS</h1>
-			</article>
-		</div>
-	</body>
+  <section class="cards">
+    <div class="card">
+      <img src="Refacción.png" alt="Refacciones">
+      <h2>Refacciones</h2>
+    </div>
+    <div class="card">
+      <img src="Centrifuga.png" alt="Mantenimientos">
+      <h2>Mantenimientos</h2>
+    </div>
+    <div class="card">
+      <img src="Balanceo.png" alt="Balanceos">
+      <h2>Balanceos</h2>
+    </div>
+    <div class="card">
+      <img src="Metalmecanico.png" alt="Servicios Metalmecánicos">
+      <h2>Servicios Metalmecánicos</h2>
+    </div>
+  </section>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-white";
+    }
+
+    setInterval(function() {
+      plusDivs(1);
+    }, 15000);
+  </script>
+  <footer>
+    <div style="max-width: 1000px; margin: auto;">
+      <p><strong>Centridek</strong></p>
+      <p>Teléfonos: +52 777 375 3194, 777 369 9105, 777 304 0569 o 777 116 2343</p>
+      <p>Email: contacto@centridek.com</p>
+      <p>Dirección: Calle de ejemplo #123, Ciudad de México, México</p>
+      <div class="redes">
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Instagram">📸</a>
+        <a href="#" title="LinkedIn">💼</a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
 </html>
 
 
