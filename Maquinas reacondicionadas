@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máquinas Reacondicionadas | Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4fdfc;
+      margin: 0;
+    }
+
+    header {
+      background-color: #003d6f;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: 2.5rem;
+    }
+
+    .filtro {
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .filtro button {
+      background-color: #0072b1;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      margin: 0 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .filtro button:hover {
+      background-color: #003d6f;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .producto {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+    }
+
+    .producto img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .producto h3 {
+      color: #003d6f;
+      font-size: 1.1rem;
+    }
+
+    .producto p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .oculto {
+      display: none;
+    }
+
+    footer {
+      background-color: #003d6f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Máquinas Reacondicionadas</h1>
+    <p>Calidad, confianza y garantía en cada equipo reacondicionado</p>
+  </header>
+
+  <section class="filtro">
+    <button onclick="filtrar('inmediata')">Entrega inmediata</button>
+    <button onclick="filtrar('proximamente')">Entrega próxima</button>
+    <button onclick="filtrar('todas')">Ver todas</button>
+  </section>
+
+  <section class="galeria">
+    <div class="producto inmediata">
+      <a href="producto1.html"><img src="producto1.jpg" alt="Producto 1"></a>
+      <h3>Centrífuga Alfa Laval</h3>
+      <p>Reacondicionada, lista para operar.</p>
+    </div>
+    <div class="producto inmediata">
+      <a href="producto2.html"><img src="producto2.jpg" alt="Producto 2"></a>
+      <h3>Decantadora Flottweg</h3>
+      <p>Alta capacidad y rendimiento.</p>
+    </div>
+    <div class="producto proximamente">
+      <a href="producto3.html"><img src="producto3.jpg" alt="Producto 3"></a>
+      <h3>Centrífuga Pieralisi</h3>
+      <p>Con refacciones originales y puesta a punto.</p>
+    </div>
+    <div class="producto inmediata">
+      <a href="producto4.html"><img src="producto4.jpg" alt="Producto 4"></a>
+      <h3>Decantadora Westfalia</h3>
+      <p>Revisada completamente y garantizada.</p>
+    </div>
+    <div class="producto proximamente">
+      <a href="producto5.html"><img src="producto5.jpg" alt="Producto 5"></a>
+      <h3>Centrífuga Krauss-Maffei</h3>
+      <p>Especial para procesos químicos e industriales.</p>
+    </div>
+    <div class="producto inmediata">
+      <a href="producto6.html"><img src="producto6.jpg" alt="Producto 6"></a>
+      <h3>Centrífuga Andritz</h3>
+      <p>Reacondicionada con tecnología de punta.</p>
+    </div>
+    <div class="producto proximamente">
+      <a href="producto7.html"><img src="producto7.jpg" alt="Producto 7"></a>
+      <h3>Decantadora Sharples</h3>
+      <p>Ideal para industrias alimenticias.</p>
+    </div>
+    <div class="producto inmediata">
+      <a href="producto8.html"><img src="producto8.jpg" alt="Producto 8"></a>
+      <h3>Centrífuga Flottweg pequeña</h3>
+      <p>Perfecta para procesos piloto.</p>
+    </div>
+    <div class="producto proximamente">
+      <a href="producto9.html"><img src="producto9.jpg" alt="Producto 9"></a>
+      <h3>Decantadora Alfa Laval industrial</h3>
+      <p>Gran capacidad, actualmente en reacondicionamiento.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Centridek. Todos los derechos reservados. | <a href="contacto.html">Contáctanos</a></p>
+  </footer>
+
+  <script>
+    function filtrar(tipo) {
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(p => {
+        if (tipo === 'todas') {
+          p.classList.remove('oculto');
+        } else {
+          if (p.classList.contains(tipo)) {
+            p.classList.remove('oculto');
+          } else {
+            p.classList.add('oculto');
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
