@@ -1,324 +1,331 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>CENTRIDEK</title>
-	<link rel="icon" type="image/png" href="Logo flat.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
-		header {
-			margin: 0;
-		}
-		nav {
-			background-color: #212656;
-			height: 15vh;
-			padding: 2vh;
-			text-align: center;
-		}
-		a {
-			font-family: 'Roboto', sans-serif;
-			color: white;
-			text-decoration: none;
-			font-size: 1.2vw;
-		}
-		#MKI, #MKII {
-			background-color: #212656;
-			height: 7vh;
-			width: 12vw;
-			border: solid 0.2vw white;
-			display: inline-block;
-			padding: 1vh;
-			margin: 0 3vw;
-			vertical-align: middle;
-		}
-		#MKII {
-			width: 18vw;
-		}
-		#MKI:hover, #MKII:hover {
-			background-color: #afc91f;
-		}
-		.mySlides {
-			display: none;
-		}
-		#MKIII, #MKIV {
-			background-color: white;
-			width: 40%;
-			padding: 2%;
-			border: none;
-		}
-		#MKIII {
-			float: left;
-			margin-left: 5%;
-		}
-		#MKIV {
-			float: right;
-			margin-right: 5%;
-			margin-bottom: 5vh;
-		}
-		#MKIX, #MKX, #MKVIII {
-			background-color: white;
-			width: 25%;
-			padding: 2%;
-			margin: 2%;
-			display: inline-block;
-			vertical-align: top;
-		}
-		h1 {
-			font-family: 'Sofia Sans Condensed', sans-serif;
-			color: #056d5f;
-			font-size: 2.5vw;
-			margin-left: 5%;
-		}
-		p, li {
-			font-family: 'Roboto', sans-serif;
-			font-size: 1.2vw;
-			text-align: justify;
-		}
-		#refa, #vision, #valores, #Misión, #Visión, #Valor {
-			margin-left: 5%;
-		}
-		#Misión, #Visión, #Valor {
-			width: 40%;
-		}
-		input, textarea {
-			width: 90%;
-			border: solid 0.2vw #212656;
-			font-size: 1vw;
-		}
-		#envio {
-			color: white;
-			background-color: #afc91f;
-			border-radius: 15%;
-			padding: 0.5vw 1vw;
-			font-size: 1vw;
-			cursor: pointer;
-			border: none;
-			margin-top: 1vh;
-		}
-		#MKVI {
-			font-family: 'Sofia Sans Condensed', sans-serif;
-			color: black;
-			font-size: 3vw;
-			position: absolute;
-			left: 45%;
-			top: 15vh;
-		}
-		#MKVII {
-			font-family: 'Sofia Sans Condensed', sans-serif;
-			color: black;
-			font-size: 2vw;
-			position: absolute;
-			left: 44%;
-			top: 25vh;
-		}
-		#imagen1 {
-			width: 75%;
-			margin-left: 5%;
-		}
-		#imagen3 {
-			width: 10%;
-			margin-right: 2%;
-			vertical-align: middle;
-		}
-		/* Dropdown menu */
-		.dropdown {
-			display: inline-block;
-			position: relative;
-		}
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #212656;
-			min-width: 160px;
-			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-			z-index: 1;
-		}
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
-		.dropdown-content a {
-			color: white;
-			padding: 1vh 1vw;
-			text-decoration: none;
-			display: block;
-		}
-		.dropdown-content a:hover {
-			background-color: #afc91f;
-		}
+  <meta charset="UTF-8">
+  <title>CENTRIDEK - Nosotros</title>
+  <link rel="icon" type="image/png" href="Logo flat.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		/* Responsive Design */
-		@media (max-width: 768px) {
-			a {
-				font-size: 3vw;
-			}
-			#MKI, #MKII {
-				width: 30vw;
-				height: auto;
-				margin: 2vw 2vw;
-			}
-			#MKVI, #MKVII {
-				position: static;
-				text-align: center;
-				margin-top: 5vh;
-			}
-			h1 {
-				font-size: 4vw;
-			}
-			p, li {
-				font-size: 3vw;
-			}
-			#MKIII, #MKIV, #MKIX, #MKX, #MKVIII {
-				width: 90%;
-				margin: 2% auto;
-				float: none;
-			}
-			#imagen3 {
-				width: 8vw;
-			}
-			input, textarea {
-				font-size: 3vw;
-			}
-			#envio {
-				font-size: 3vw;
-			}
-			nav {
-				height: auto;
-			}
-		}
-	</style>
+  <!-- Estilos base y fuentes -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #212656;
+      padding: 2vh 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    nav img {
+      width: 5vw;
+      min-width: 40px;
+    }
+
+    .menu-item, .dropdown {
+      margin: 0 1vw;
+    }
+
+    .menu-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2vw;
+      padding: 0.5vw 1vw;
+      border: 2px solid white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    .menu-link:hover {
+      background-color: #afc91f;
+      color: #212656;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #212656;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      margin-top: 0.5vh;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 0.8vw 1vw;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #afc91f;
+      color: #212656;
+    }
+
+    header h1, header h2 {
+      text-align: center;
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      color: #056d5f;
+    }
+
+    header h1 {
+      font-size: 3vw;
+      margin-top: 3vh;
+    }
+
+    header h2 {
+      font-size: 2vw;
+      margin-bottom: 3vh;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+    }
+
+    .section {
+      background-color: white;
+      margin: 5vh auto;
+      padding: 3vh 5vw;
+      width: 90%;
+      max-width: 1200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .section img {
+      width: 10%;
+      float: left;
+      margin-right: 2vw;
+    }
+
+    .section h2 {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      color: #056d5f;
+      font-size: 2vw;
+      margin-bottom: 1vh;
+    }
+
+    .section p, .section li {
+      font-size: 1.1vw;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .section ul {
+      padding-left: 2vw;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2vw;
+      margin-bottom: 5vh;
+      width: 90%;
+      margin: auto;
+    }
+
+    .contact-box {
+      width: 45%;
+      background-color: white;
+      padding: 3vh 2vw;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-box h2 {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      color: #056d5f;
+      font-size: 2vw;
+      margin-bottom: 1vh;
+    }
+
+    .contact-box img {
+      width: 8%;
+      vertical-align: middle;
+      margin-right: 1vw;
+    }
+
+    .contact-box p {
+      font-size: 1.1vw;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1vh;
+      border: 2px solid #212656;
+      font-size: 1vw;
+      margin-bottom: 2vh;
+    }
+
+    #envio {
+      background-color: #afc91f;
+      color: white;
+      border: none;
+      padding: 1vh 2vw;
+      font-size: 1.1vw;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #envio:hover {
+      background-color: #212656;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-link {
+        font-size: 3vw;
+        padding: 1vh;
+      }
+
+      header h1 {
+        font-size: 6vw;
+      }
+
+      header h2 {
+        font-size: 4vw;
+      }
+
+      .section h2 {
+        font-size: 5vw;
+      }
+
+      .section p, .section li {
+        font-size: 3.5vw;
+      }
+
+      .contact-box {
+        width: 100%;
+      }
+
+      .contact-box p {
+        font-size: 3.5vw;
+      }
+
+      input, textarea {
+        font-size: 3.5vw;
+      }
+
+      #envio {
+        font-size: 3.5vw;
+      }
+    }
+  </style>
 </head>
 <body>
-	<header>
-		<nav>
-			<a id="logo" href="index.html"><img alt="Centridek logo" src="Logo flat.png" style="width:5vw;"></a>
-			<div id="MKI"><a href="Nosotros.html">Nosotros</a></div>
-			<div class="dropdown">
-				<div id="MKII" class="dropbtn"><a href="Servicios.html">Servicios</a></div>
-				<div class="dropdown-content">
-					<a href="Mantenimiento.html">Mantenimiento</a>
-					<a href="Metalmecanico.html">Metalmecánico</a>
-					<a href="#">Balanceos</a>
-					<a href="#">Reparación de refacciones</a>
-				</div>
-			</div>
-			<div id="MKI"><a href="ventas.html">Ventas</a></div>
-		</nav>
-	</header>
 
-	<div>
-		<div id="MKVI">NOSOTROS</div>
-		<div id="MKVII">¿Quiénes somos?</div>
-		<div class="w3-content w3-display-container" style="max-width:100%">
-			<img class="mySlides" alt="Centridek portada" src="Centridek intro.gif" style="width:100%">
-			<img class="mySlides" alt="Centridek portada2" src="Balanceo1.jpg" style="width:100%">
-			<img class="mySlides" alt="Centridek portada3" src="Maquinas2.jpg" style="width:100%">
-			<img class="mySlides" alt="Centridek portada4" src="Maquinas3.png" style="width:100%">
-			<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-				<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-				<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-			</div>
-		</div>
-	</div>
+  <nav>
+    <a href="index.html"><img src="Logo flat.png" alt="Logo Centridek"></a>
+    <div class="menu-item"><a class="menu-link" href="Nosotros.html">Nosotros</a></div>
+    <div class="dropdown menu-item">
+      <div class="menu-link">Servicios</div>
+      <div class="dropdown-content">
+        <a href="Mantenimiento.html">Mantenimiento</a>
+        <a href="Metalmecanico.html">Metalmecánico</a>
+        <a href="#">Balanceos</a>
+        <a href="#">Reparación de refacciones</a>
+      </div>
+    </div>
+    <div class="menu-item"><a class="menu-link" href="ventas.html">Ventas</a></div>
+  </nav>
 
-	<div id="MKIX">
-		<article>
-			<img alt="La misión de la empresa" id="Misión" src="Misión.png">
-			<h1 id="refa">MISIÓN</h1>
-			<p>
-				En Centridek, nuestra misión es proporcionar servicios de mantenimiento industrial con 
-				los más altos estándares de calidad, respaldados por refacciones originales y productos 
-				confiables a precios justos. Nos dedicamos a ofrecer soluciones técnicas eficientes, 
-				adaptadas a las necesidades específicas de cada cliente, con el objetivo de optimizar el 
-				rendimiento y prolongar la vida útil de sus equipos.
-			</p>
-			<p>
-				A través de un enfoque centrado en la atención personalizada y el compromiso constante con 
-				la mejora continua, buscamos construir relaciones comerciales duraderas, basadas en la 
-				honestidad, la responsabilidad y la excelencia operativa. Nuestro propósito es ser aliados 
-				estratégicos que aporten valor real en cada etapa del proceso.
-			</p>
-		</article>
-	</div>
+  <header>
+    <h1>NOSOTROS</h1>
+    <h2>¿Quiénes somos?</h2>
+    <img class="hero-img" src="Centridek intro.gif" alt="Portada Centridek">
+  </header>
 
-	<div id="MKX">
-		<article>
-			<img alt="La visión de la empresa" id="Visión" src="Visión.png">
-			<h1 id="vision">VISIÓN</h1>
-			<p>
-				En Centridek, aspiramos a ser reconocidos como una empresa líder en el ámbito del 
-				mantenimiento industrial, tanto a nivel nacional como internacional, 
-				distinguiéndonos por nuestra confiabilidad, honestidad y excelencia en el servicio. 
-				Queremos ser el referente en innovación y eficiencia, ofreciendo soluciones que superen 
-				siempre las expectativas de nuestros clientes.
-			</p>
-			<p>
-				Nos visualizamos como una organización en constante crecimiento, con una cartera de 
-				clientes diversificada y leal, y un equipo humano altamente capacitado y comprometido 
-				con nuestra misión. Trabajaremos para expandir nuestra presencia en nuevos mercados 
-				y sectores, contribuyendo al desarrollo económico y la sostenibilidad industrial.
-			</p>
-		</article>
-	</div>
+  <section class="section">
+    <img src="Misión.png" alt="Misión">
+    <h2>MISIÓN</h2>
+    <p>En Centridek, nuestra misión es proporcionar servicios de mantenimiento industrial con 
+      los más altos estándares de calidad, respaldados por refacciones originales y productos 
+      confiables a precios justos. Nos dedicamos a ofrecer soluciones técnicas eficientes, 
+      adaptadas a las necesidades específicas de cada cliente, con el objetivo de optimizar el 
+      rendimiento y prolongar la vida útil de sus equipos.</p>
+    <p>A través de un enfoque centrado en la atención personalizada y el compromiso constante con 
+      la mejora continua, buscamos construir relaciones comerciales duraderas, basadas en la 
+      honestidad, la responsabilidad y la excelencia operativa. Nuestro propósito es ser aliados 
+      estratégicos que aporten valor real en cada etapa del proceso.</p>
+  </section>
 
-	<div id="MKVIII">
-		<article>
-			<img alt="Los valores de la empresa" id="Valor" src="Valor.png" >
-			<h1 id="valores">VALORES</h1>
-			<p>
-				En Centridek, nos regimos por valores fundamentales que definen nuestra forma de trabajar y que 
-				consideramos indispensables para construir relaciones sólidas, honestas y duraderas con nuestros 
-				clientes. Estos principios inspiran cada acción y reflejan nuestro compromiso con la excelencia.
-			</p>
-			<ul>
-				<li>Calidad: Nos comprometemos a ofrecer los mejores servicios.</li>
-				<li>Compromiso: Establecemos relaciones de confianza.</li>
-				<li>Innovación: Buscamos soluciones eficaces.</li>
-				<li>Responsabilidad: Actuamos con ética y transparencia.</li>
-			</ul>
-		</article>
-	</div>
+  <section class="section">
+    <img src="Visión.png" alt="Visión">
+    <h2>VISIÓN</h2>
+    <p>En Centridek, aspiramos a ser reconocidos como una empresa líder en el ámbito del 
+      mantenimiento industrial, tanto a nivel nacional como internacional, 
+      distinguiéndonos por nuestra confiabilidad, honestidad y excelencia en el servicio. 
+      Queremos ser el referente en innovación y eficiencia, ofreciendo soluciones que superen 
+      siempre las expectativas de nuestros clientes.</p>
+    <p>Nos visualizamos como una organización en constante crecimiento, con una cartera de 
+      clientes diversificada y leal, y un equipo humano altamente capacitado y comprometido 
+      con nuestra misión. Trabajaremos para expandir nuestra presencia en nuevos mercados 
+      y sectores, contribuyendo al desarrollo económico y la sostenibilidad industrial.</p>
+  </section>
 
-	<div id="MKIII">
-		<article>
-			<h1 id="refa">CONTÁCTANOS</h1>
-			<p>Escríbenos y en el menor tiempo posible te responderemos...</p>
-			<img id="imagen1" src="Linea.png">
-			<p><img id="imagen3" src="correo2.png">centridek@hotmail.com</p>
-			<p><img id="imagen3" src="whats2.png">7773753194</p>
-			<p><img id="imagen3" src="whats2.png">7773699105</p>
-			<p><img id="imagen3" src="whats2.png">7773040569</p>
-			<p><img id="imagen3" src="whats2.png">7771162343</p>
-		</article>
-	</div>
+  <section class="section">
+    <img src="Valor.png" alt="Valores">
+    <h2>VALORES</h2>
+    <p>En Centridek, nos regimos por valores fundamentales que definen nuestra forma de trabajar y que 
+      consideramos indispensables para construir relaciones sólidas, honestas y duraderas con nuestros 
+      clientes. Estos principios inspiran cada acción y reflejan nuestro compromiso con la excelencia.</p>
+    <ul>
+      <li>Calidad: Nos comprometemos a ofrecer los mejores servicios.</li>
+      <li>Compromiso: Establecemos relaciones de confianza.</li>
+      <li>Innovación: Buscamos soluciones eficaces.</li>
+      <li>Responsabilidad: Actuamos con ética y transparencia.</li>
+    </ul>
+  </section>
 
-	<div id="MKIV">
-		<article>
-			<h1>ENVÍANOS UN MENSAJE</h1>
-			<form action="https://formspree.io/f/xdkewbvk" method="POST">
-				<label>Nombre</label><br>
-				<input type="text" name="nombre"><br><br>
-				<label>E-mail</label><br>
-				<input type="email" name="E-mail"><br><br>
-				<label>Teléfono</label><br>
-				<input type="text" name="Telefono"><br><br>
-				<label>Mensaje</label><br>
-				<textarea name="Asunto" rows="5"></textarea><br><br>
-				<input id="envio" type="submit" value="ENVIAR">
-			</form>
-		</article>
-	</div>
+  <div class="contact-container">
+    <div class="contact-box">
+      <h2>CONTÁCTANOS</h2>
+      <p>Escríbenos y en el menor tiempo posible te responderemos...</p>
+      <img src="Linea.png" alt="División">
+      <p><img src="correo2.png">centridek@hotmail.com</p>
+      <p><img src="whats2.png">7773753194</p>
+      <p><img src="whats2.png">7773699105</p>
+      <p><img src="whats2.png">7773040569</p>
+      <p><img src="whats2.png">7771162343</p>
+    </div>
+
+    <div class="contact-box">
+      <h2>ENVÍANOS UN MENSAJE</h2>
+      <form action="https://formspree.io/f/xdkewbvk" method="POST">
+        <label>Nombre</label><br>
+        <input type="text" name="nombre" required><br>
+        <label>E-mail</label><br>
+        <input type="email" name="E-mail" required><br>
+        <label>Teléfono</label><br>
+        <input type="text" name="Telefono"><br>
+        <label>Mensaje</label><br>
+        <textarea name="Asunto" rows="5" required></textarea><br>
+        <input id="envio" type="submit" value="ENVIAR">
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>
+
 
