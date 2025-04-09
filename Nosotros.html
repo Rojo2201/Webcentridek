@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>CENTRIDEK - Nosotros</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosotros | Centridek</title>
   <link rel="icon" type="image/png" href="Logo flat.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Estilos base y fuentes -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --verde-lima: #afc91f;
+      --azul-profundo: #003d6f;
+      --azul-intermedio: #0072b1;
+      --verde-agua: #339a9d;
+      --verde-oscuro: #2b6e67;
+      --fondo-oscuro: #0d1b2a;
+      --texto-claro: #e0e1dd;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f0f7f6;
+      color: #1a1a1a;
+      scroll-behavior: smooth;
     }
 
     nav {
-      background-color: #212656;
-      padding: 2vh 5vw;
+      background-color: var(--azul-profundo);
+      padding: 1.5% 2%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 0.6s ease-out;
     }
 
-    nav img {
-      width: 5vw;
-      min-width: 40px;
-    }
-
-    .menu-item, .dropdown {
-      margin: 0 1vw;
-    }
-
-    .menu-link {
+    nav a, .dropbtn {
       color: white;
       text-decoration: none;
-      font-size: 1.2vw;
-      padding: 0.5vw 1vw;
-      border: 2px solid white;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-      display: inline-block;
+      font-size: 1.2em;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
     }
 
-    .menu-link:hover {
-      background-color: #afc91f;
-      color: #212656;
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #212656;
+      background-color: white;
+      min-width: 180px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       z-index: 1;
-      margin-top: 0.5vh;
     }
 
     .dropdown:hover .dropdown-content {
@@ -66,265 +77,253 @@
     }
 
     .dropdown-content a {
-      color: white;
-      padding: 0.8vw 1vw;
-      display: block;
+      color: var(--azul-profundo);
+      padding: 12px 16px;
       text-decoration: none;
+      display: block;
     }
 
     .dropdown-content a:hover {
-      background-color: #afc91f;
-      color: #212656;
+      background-color: var(--verde-agua);
+      color: white;
     }
 
-    header h1, header h2 {
+    #MKV {
+      background-color: var(--verde-lima);
+      border: solid 2px white;
+    }
+
+    #MKV:hover {
+      background-color: #d3e659;
+      transform: scale(1.1);
+    }
+
+    .titulo {
       text-align: center;
+      margin-top: 4rem;
+      font-size: 2rem;
+      color: var(--verde-oscuro);
       font-family: 'Sofia Sans Condensed', sans-serif;
-      color: #056d5f;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    header h1 {
-      font-size: 3vw;
-      margin-top: 3vh;
+    .contenido-nosotros {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      animation: fadeInUp 1.2s ease-in;
     }
 
-    header h2 {
-      font-size: 2vw;
-      margin-bottom: 3vh;
+    .contenido-nosotros h3 {
+      color: var(--azul-intermedio);
+      margin-top: 1.5rem;
     }
 
-    .hero-img {
+    .contenido-nosotros img {
       width: 100%;
-      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 2rem 0;
     }
 
-    .section {
-      background-color: white;
-      margin: 5vh auto;
-      padding: 3vh 5vw;
-      width: 90%;
-      max-width: 1200px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
     }
 
-    .section img {
-      width: 10%;
-      float: left;
-      margin-right: 2vw;
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .section h2 {
-      font-family: 'Sofia Sans Condensed', sans-serif;
-      color: #056d5f;
-      font-size: 2vw;
-      margin-bottom: 1vh;
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .section p, .section li {
-      font-size: 1.1vw;
-      line-height: 1.6;
-      text-align: justify;
+    .formulario {
+      margin-top: 3rem;
     }
 
-    .section ul {
-      padding-left: 2vw;
+    .formulario h3 {
+      margin-bottom: 1rem;
     }
 
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2vw;
-      margin-bottom: 5vh;
-      width: 90%;
-      margin: auto;
-    }
-
-    .contact-box {
-      width: 45%;
-      background-color: white;
-      padding: 3vh 2vw;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .contact-box h2 {
-      font-family: 'Sofia Sans Condensed', sans-serif;
-      color: #056d5f;
-      font-size: 2vw;
-      margin-bottom: 1vh;
-    }
-
-    .contact-box img {
-      width: 8%;
-      vertical-align: middle;
-      margin-right: 1vw;
-    }
-
-    .contact-box p {
-      font-size: 1.1vw;
+    form {
+      display: grid;
+      gap: 1rem;
     }
 
     input, textarea {
-      width: 100%;
-      padding: 1vh;
-      border: 2px solid #212656;
-      font-size: 1vw;
-      margin-bottom: 2vh;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
     }
 
-    #envio {
-      background-color: #afc91f;
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: var(--azul-profundo);
       color: white;
       border: none;
-      padding: 1vh 2vw;
-      font-size: 1.1vw;
-      border-radius: 10px;
+      padding: 0.75rem;
+      border-radius: 8px;
       cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
     }
 
-    #envio:hover {
-      background-color: #212656;
+    button:hover {
+      background-color: var(--azul-intermedio);
+    }
+
+    footer {
+      background-color: var(--azul-profundo);
       color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
     }
 
-    @media (max-width: 768px) {
+    footer .redes {
+      margin-top: 1rem;
+    }
+
+    footer .redes a {
+      margin: 0 10px;
+      display: inline-block;
+      color: white;
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    footer .redes a:hover {
+      transform: scale(1.3);
+      color: var(--verde-lima);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 768px) {
       nav {
         flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .menu-link {
-        font-size: 3vw;
-        padding: 1vh;
-      }
-
-      header h1 {
-        font-size: 6vw;
-      }
-
-      header h2 {
-        font-size: 4vw;
-      }
-
-      .section h2 {
-        font-size: 5vw;
-      }
-
-      .section p, .section li {
-        font-size: 3.5vw;
-      }
-
-      .contact-box {
-        width: 100%;
-      }
-
-      .contact-box p {
-        font-size: 3.5vw;
-      }
-
-      input, textarea {
-        font-size: 3.5vw;
-      }
-
-      #envio {
-        font-size: 3.5vw;
+        gap: 1em;
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
-    <a href="index.html"><img src="Logo flat.png" alt="Logo Centridek"></a>
-    <div class="menu-item"><a class="menu-link" href="Nosotros.html">Nosotros</a></div>
-    <div class="dropdown menu-item">
-      <div class="menu-link">Servicios</div>
-      <div class="dropdown-content">
-        <a href="Mantenimiento.html">Mantenimiento</a>
-        <a href="Metalmecanico.html">Metalmecánico</a>
-        <a href="#">Balanceos</a>
-        <a href="#">Reparación de refacciones</a>
+    <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
+    <div class="nav-links">
+      <a href="Nosotros.html">Nosotros</a>
+      <div class="dropdown">
+        <a href="Servicios.html" class="dropbtn">Servicios</a>
+        <div class="dropdown-content">
+          <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
+          <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
+          <a href="Metalmecanico.html">Metalmecánico</a>
+          <a href="Balanceo.html">Balanceos</a>
+          <a href="Refacciones.html">Reparación de refacciones</a>
+        </div>
       </div>
+     <div class="dropdown">
+        <a href="Ventas.html" class="dropbtn">Ventas</a>
+        <div class="dropdown-content">
+          <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+          <a href="Refacciones.html">Refacciones</a>
+        </div>
+      </div>
+      <a href="contacto.html" id="MKV">Contáctanos</a>
     </div>
-    <div class="menu-item"><a class="menu-link" href="ventas.html">Ventas</a></div>
   </nav>
 
-  <header>
-    <h1>NOSOTROS</h1>
-    <h2>¿Quiénes somos?</h2>
-    <img class="hero-img" src="Centridek intro.gif" alt="Portada Centridek">
-  </header>
+  <h1 class="titulo">¿Quiénes somos?</h1>
 
-  <section class="section">
-    <img src="Misión.png" alt="Misión">
-    <h2>MISIÓN</h2>
-    <p>En Centridek, nuestra misión es proporcionar servicios de mantenimiento industrial con 
-      los más altos estándares de calidad, respaldados por refacciones originales y productos 
-      confiables a precios justos. Nos dedicamos a ofrecer soluciones técnicas eficientes, 
-      adaptadas a las necesidades específicas de cada cliente, con el objetivo de optimizar el 
-      rendimiento y prolongar la vida útil de sus equipos.</p>
-    <p>A través de un enfoque centrado en la atención personalizada y el compromiso constante con 
-      la mejora continua, buscamos construir relaciones comerciales duraderas, basadas en la 
-      honestidad, la responsabilidad y la excelencia operativa. Nuestro propósito es ser aliados 
-      estratégicos que aporten valor real en cada etapa del proceso.</p>
-  </section>
+  <section class="contenido-nosotros">
+    <p>Centridek es una empresa mexicana dedicada al mantenimiento, reparación y venta de refacciones para centrífugas y decantadoras. Aunque somos una empresa joven, nuestro equipo cuenta con años de experiencia en el sector, lo cual nos permite ofrecer soluciones confiables y eficientes.</p>
 
-  <section class="section">
-    <img src="Visión.png" alt="Visión">
-    <h2>VISIÓN</h2>
-    <p>En Centridek, aspiramos a ser reconocidos como una empresa líder en el ámbito del 
-      mantenimiento industrial, tanto a nivel nacional como internacional, 
-      distinguiéndonos por nuestra confiabilidad, honestidad y excelencia en el servicio. 
-      Queremos ser el referente en innovación y eficiencia, ofreciendo soluciones que superen 
-      siempre las expectativas de nuestros clientes.</p>
-    <p>Nos visualizamos como una organización en constante crecimiento, con una cartera de 
-      clientes diversificada y leal, y un equipo humano altamente capacitado y comprometido 
-      con nuestra misión. Trabajaremos para expandir nuestra presencia en nuevos mercados 
-      y sectores, contribuyendo al desarrollo económico y la sostenibilidad industrial.</p>
-  </section>
+    <p>Nos especializamos en brindar un servicio profesional y personalizado, siempre enfocados en la calidad, el compromiso y la satisfacción total de nuestros clientes.</p>
 
-  <section class="section">
-    <img src="Valor.png" alt="Valores">
-    <h2>VALORES</h2>
-    <p>En Centridek, nos regimos por valores fundamentales que definen nuestra forma de trabajar y que 
-      consideramos indispensables para construir relaciones sólidas, honestas y duraderas con nuestros 
-      clientes. Estos principios inspiran cada acción y reflejan nuestro compromiso con la excelencia.</p>
+    <img src="Equipo.jpg" alt="Nuestro equipo de trabajo">
+
+    <div class="galeria">
+      <img src="instalacion1.jpg" alt="Instalaciones Centridek 1">
+      <img src="instalacion2.jpg" alt="Instalaciones Centridek 2">
+      <img src="equipo1.jpg" alt="Miembro del equipo 1">
+      <img src="equipo2.jpg" alt="Miembro del equipo 2">
+    </div>
+
+    <h3>Misión</h3>
+    <p>En Centridek, nuestra misión es proporcionar servicios de mantenimiento industrial con los más altos estándares de calidad, asegurando la eficiencia operativa de nuestros clientes a través de un enfoque centrado en la atención personalizada y la mejora continua.</p>
+
+    <h3>Visión</h3>
+    <p>Aspiramos a ser reconocidos como una empresa líder a nivel nacional en soluciones para centrífugas y decantadoras, distinguiéndonos por nuestra innovación tecnológica, compromiso con el cliente y crecimiento sustentable.</p>
+
+    <h3>Valores</h3>
+    <p>En Centridek, nos regimos por valores fundamentales que guían nuestras acciones y fortalecen nuestra identidad empresarial:</p>
     <ul>
-      <li>Calidad: Nos comprometemos a ofrecer los mejores servicios.</li>
-      <li>Compromiso: Establecemos relaciones de confianza.</li>
-      <li>Innovación: Buscamos soluciones eficaces.</li>
-      <li>Responsabilidad: Actuamos con ética y transparencia.</li>
+      <li><strong>Calidad:</strong> Nos comprometemos a ofrecer los mejores servicios y productos del mercado.</li>
+      <li><strong>Compromiso:</strong> Establecemos relaciones de confianza con nuestros clientes, proveedores y colaboradores.</li>
+      <li><strong>Innovación:</strong> Buscamos constantemente soluciones eficaces y actualizadas para los desafíos del sector.</li>
+      <li><strong>Responsabilidad:</strong> Actuamos con ética, transparencia y respeto al medio ambiente.</li>
     </ul>
   </section>
 
-  <div class="contact-container">
-    <div class="contact-box">
-      <h2>CONTÁCTANOS</h2>
-      <p>Escríbenos y en el menor tiempo posible te responderemos...</p>
-      <img src="Linea.png" alt="División">
-      <p><img src="correo2.png">centridek@hotmail.com</p>
-      <p><img src="whats2.png">7773753194</p>
-      <p><img src="whats2.png">7773699105</p>
-      <p><img src="whats2.png">7773040569</p>
-      <p><img src="whats2.png">7771162343</p>
-    </div>
+  <section class="contenido-nosotros formulario">
+    <h3>Contáctanos</h3>
+    <form action="https://formspree.io/f/xdkewbvk" method="post">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="celular" placeholder="Celular" required>
+      <input type="text" name="empresa" placeholder="Empresa">
+      <input type="text" name="maquina" placeholder="Máquina">
+      <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
 
-    <div class="contact-box">
-      <h2>ENVÍANOS UN MENSAJE</h2>
-      <form action="https://formspree.io/f/xdkewbvk" method="POST">
-        <label>Nombre</label><br>
-        <input type="text" name="nombre" required><br>
-        <label>E-mail</label><br>
-        <input type="email" name="E-mail" required><br>
-        <label>Teléfono</label><br>
-        <input type="text" name="Telefono"><br>
-        <label>Mensaje</label><br>
-        <textarea name="Asunto" rows="5" required></textarea><br>
-        <input id="envio" type="submit" value="ENVIAR">
-      </form>
-    </div>
-  </div>
-
+  <footer>
+ <div style="max-width: 1000px; margin: auto;">
+      <p><strong>Centridek</strong></p>
+      <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
+      <p>Email: centridek@hotmail.com</p>
+      <p>Dirección: Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+      <div class="redes">
+        <a href="#"><img src="" alt="Facebook" height="2%"></a>
+        <a href="#"><img src="" alt="Whatsapp" height="2%"></a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+    </div>  </footer>
 </body>
 </html>
 
