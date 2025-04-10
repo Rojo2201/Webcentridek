@@ -371,18 +371,18 @@
         <div class="dropdown">
           <a href="Servicios.html">Servicios</a>
           <div class="dropdown-content">
-            <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
-            <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
-            <a href="Metalmecanico.html">Metalmecánico</a>
-            <a href="Balanceo.html">Balanceos</a>
-            <a href="Reparación de piezas.html">Reparación de piezas</a>
+            <a href="#preventivo">Mantenimiento Preventivo</a>
+            <a href="#correctivo">Mantenimiento Correctivo</a>
+            <a href="#balanceo">Balanceo</a>
+            <a href="#refacciones">Refacciones</a>
+            <a href="#metalmecanico">Metalmecánico</a>
           </div>
         </div>
         <div class="dropdown">
           <a href="ventas.html" class="dropbtn">Ventas</a>
           <div class="dropdown-content">
             <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
-            <a href="Refacciones.html">Refacciones</a>
+            <a href="Refacciones.html">Refacciónes</a>
           </div>
         </div>
         <a href="contacto.html" id="MKV">Contáctanos</a>
@@ -390,7 +390,7 @@
     </nav>
   </header>
   <section class="container">
-    <h1 class="highlight-title">Refacciones</h1>
+    <h1 class="highlight-title">Refacciónes</h1>
     <section class="filtro">
       <button onclick="filtrar('inmediata')"><i class="fas fa-box-open"></i> Entrega inmediata</button>
       <button onclick="filtrar('proximamente')"><i class="fas fa-clock"></i> Entrega próxima</button>
@@ -472,13 +472,13 @@
 </section>
      <button class="boton-cotizacion" onclick="document.getElementById('modalCotizar').style.display='block'">Solicitar cotización rápida</button>
 
-  <div id="modalCotizar" class="modal">
+   <div id="modalCotizar" class="modal">
     <div class="modal-content">
- <form action= "https://formspree.io/f/xaneaarw" method="post">
+	<form action= "https://formspree.io/f/xaneaarw" method="post">
       <h3>Solicita una cotización</h3>
       <input type="text" placeholder="Tu nombre" name="Nombre">
       <input type="email" placeholder="Tu correo electrónico" name="e-mail">
-      <textarea placeholder="Especificaciones o modelo de interés" name="Mensaje del cliente"></textarea>
+      <textarea placeholder="Refacción o refacciones que requieres" name="Mensaje del cliente"></textarea>
       <button onclick="document.getElementById('modalCotizar').style.display='none'" type="submit">Enviar</button>
 	  </form>
     </div>
@@ -489,7 +489,7 @@
         <a href="ventas.html" class="w3-button w3-blue w3-round-large w3-margin-right">
           <i class="fas fa-arrow-left"></i> Volver a ventas
         </a>
-        <a href="Maquinas reacondicionadas.html" class="w3-button w3-green w3-round-large">
+        <a href="Refacciones.html" class="w3-button w3-green w3-round-large">
           <i class="fas fa-cogs"></i> Ver máquinas reacondicionadas
         </a>
       </div>
@@ -539,6 +539,13 @@
 <!-- CONTENIDO FINAL OMITIDO POR ESPACIO -->
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
