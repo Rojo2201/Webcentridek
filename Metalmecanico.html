@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio Metalmecánico | Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-profundo: #003d6f;
+      --verde-lima: #d3e659;
+      --verde-agua: #50c2c9;
+    }
+
+    body {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      margin: 0;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background-color: var(--azul-profundo);
+      padding: 1.5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      animation: fadeInDown 1s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    nav img {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      color: var(--azul-profundo);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--verde-agua);
+      color: white;
+    }
+
+    #MKV {
+      background-color: var(--verde-lima);
+      padding: 0.5em 1em;
+      border: solid 2px white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #MKV:hover {
+      background-color: #c4db4f;
+      transform: scale(1.1);
+    }
+
+    .contact-button {
+      background-color: var(--verde-lima);
+      color: #003d6f;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: pulse 2s infinite, bounceIn 1s ease;
+      display: block;
+      margin: 2rem auto;
+    }
+
+    .contact-button:hover {
+      background-color: #c4db4f;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 230, 89, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(211, 230, 89, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 230, 89, 0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .main-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin: 1rem 0 0.5rem;
+      color: var(--azul-profundo);
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1s ease;
+    }
+
+    .main-subtitle {
+      font-size: 1.3rem;
+      color: #2a5c86;
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease;
+    }
+       footer {
+      background-color: var(--azul-profundo);
+      color: white;
+      text-align: center;
+      padding: 5% 2%;
+    }
+
+    footer p, footer a {
+      margin: 0.5em 0;
+      font-size: 1em;
+    }
+
+    .redes {
+      margin-top: 2%;
+    }
+
+    .redes img {
+      margin: 0 1%;
+      height: 2.5vw;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .redes img:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
+  </style>
+</head>
+<body>
+ <header>
+    <nav>
+      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
+      <div class="nav-links">
+        <a href="Nosotros.html">Nosotros</a>
+        <div class="dropdown">
+          <a href="Servicios.html">Servicios</a>
+          <div class="dropdown-content">
+            <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
+            <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
+            <a href="Metalmecanico.html">Metalmecánico</a>
+            <a href="Balanceo.html">Balanceos</a>
+            <a href="Reparación de piezas.html">Reparación de piezas</a>
+          </div>
+        </div>
+       <div class="dropdown">
+        <a href="ventas.html" class="dropbtn">Ventas</a>
+        <div class="dropdown-content">
+          <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+          <a href="Refacciones.html">Refacciones</a>
+        </div>
+      </div>
+        <a href="contacto.html" id="MKV">Contáctanos</a>
+      </div>
+    </nav>
+  </header>
+<!-- Sección de Servicio Metalmecánico -->
+<section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <h2 class="main-title">¿Qué es el Servicio Metalmecánico?</h2>
+  <p class="main-subtitle">
+    Nuestro servicio metalmecánico está enfocado en ofrecer soluciones de fabricación, reparación y modificación de piezas metálicas. Contamos con maquinaria de precisión y personal altamente calificado para satisfacer requerimientos técnicos específicos.
+  </p>
+</section>
+
+<section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <h2 class="main-title">¿Qué incluye nuestro servicio?</h2>
+  <p class="main-subtitle">
+    Ofrecemos atención personalizada y una amplia gama de trabajos como:
+  </p>
+  <ul style="font-size: 1.1rem; line-height: 1.8; list-style-type: disc; padding-left: 1.5em; animation: fadeIn 3s ease;">
+    <li>Fabricación y reparación de ejes, tornillos y engranes</li>
+    <li>Soldadura especializada y estructural</li>
+    <li>Corte y doblado de lámina</li>
+    <li>Maquinado de precisión</li>
+    <li>Construcción de partes bajo plano</li>
+  </ul>
+</section>
+
+<!-- Sección de Torno -->
+<section class="w3-container w3-padding-64 w3-white" style="max-width: 1000px; margin: auto;">
+  <h2 class="main-title">Trabajos de Torno</h2>
+  <p class="main-subtitle">
+    Utilizamos tornos de precisión para el maquinado de piezas cilíndricas, garantizando ajustes exactos y acabados de alta calidad.
+  </p>
+  <ul style="font-size: 1.1rem; line-height: 1.8; list-style-type: disc; padding-left: 1.5em; animation: fadeIn 2s ease;">
+    <li>Torneado de ejes, bocinas, poleas y cilindros</li>
+    <li>Reacondicionamiento de componentes mecánicos desgastados</li>
+    <li>Producción de piezas individuales o seriadas</li>
+  </ul>
+  <div class="w3-row-padding w3-margin-top" style="animation: fadeIn 3s ease;">
+    <div class="w3-half">
+      <img src="img/torno1.jpg" alt="Trabajo en torno" style="width:100%; border-radius: 8px;">
+    </div>
+    <div class="w3-half">
+      <video controls style="width:100%; border-radius: 8px;">
+        <source src="video/torno-trabajo.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Fresadora -->
+<section class="w3-container w3-padding-64 w3-white" style="max-width: 1000px; margin: auto;">
+  <h2 class="main-title">Trabajos de Fresadora</h2>
+  <p class="main-subtitle">
+    Contamos con fresadoras versátiles para crear cavidades, ranuras y superficies planas con máxima precisión.
+  </p>
+  <ul style="font-size: 1.1rem; line-height: 1.8; list-style-type: disc; padding-left: 1.5em; animation: fadeIn 2s ease;">
+    <li>Fresado de ranuras, planos y superficies complejas</li>
+    <li>Rectificado para ajustes finos de tolerancia</li>
+    <li>Construcción bajo plano para todo tipo de aplicaciones</li>
+  </ul>
+  <div class="w3-row-padding w3-margin-top" style="animation: fadeIn 3s ease;">
+    <div class="w3-half">
+      <img src="img/fresadora1.jpg" alt="Trabajo en fresadora" style="width:100%; border-radius: 8px;">
+    </div>
+    <div class="w3-half">
+      <video controls style="width:100%; border-radius: 8px;">
+        <source src="video/fresadora-trabajo.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="w3-container w3-light-grey w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <h2 class="main-title">Beneficios del Servicio Metalmecánico</h2>
+  <ul style="font-size: 1.1rem; line-height: 1.8; list-style: none; padding-left: 0; animation: fadeIn 2s ease;">
+    <li>⚙️ Alta precisión en fabricación y reparación</li>
+    <li>⚙️ Soluciones a la medida de tus necesidades</li>
+    <li>⚙️ Reducción de tiempos de entrega</li>
+    <li>⚙️ Mejora en la eficiencia y durabilidad de los componentes</li>
+    <li>⚙️ Asesoría técnica especializada</li>
+  </ul>
+  <button class="contact-button">Solicita tu cotización</button>
+</section>
+    <footer>
+    <div style="max-width: 1000px; margin: auto;">
+      <p><strong>Centridek</strong></p>
+      <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
+      <p>Email: centridek@hotmail.com</p>
+      <p> Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+       <div class="redes">
+        <a href="#"><img src="facebook.png" alt="Facebook" height="2%"></a>
+        <a href="#"><img src="whats.png" alt="Whatsapp" height="2%"></a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
