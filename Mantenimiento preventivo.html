@@ -94,6 +94,37 @@
       background-color: var(--verde-agua);
       color: white;
     }
+ footer {
+      background-color: var(--azul-profundo);
+      color: white;
+      text-align: center;
+      padding: 5% 2%;
+    }
+
+    footer p, footer a {
+      margin: 0.5em 0;
+      font-size: 1em;
+    }
+
+    .redes {
+      margin-top: 2%;
+    }
+
+    .redes img {
+      margin: 0 1%;
+      height: 2.5vw;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .redes img:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
 
     #MKV {
       background-color: var(--verde-lima);
@@ -245,7 +276,19 @@
 <section class="w3-container w3-center w3-padding-64">
   <a href="contacto.html" class="contact-button">Solicita tu cotización</a>
 </section>
-
+  <footer>
+    <div style="max-width: 1000px; margin: auto;">
+      <p><strong>Centridek</strong></p>
+      <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
+      <p>Email: centridek@hotmail.com</p>
+      <p>Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+     <div class="redes">
+        <a href="#"><img src="facebook.png" alt="Facebook" height="2%"></a>
+        <a href="#"><img src="whats.png" alt="Whatsapp" height="2%"></a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 <script>
 let slideIndex = 1;
 showDivs(slideIndex);
