@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balanceos | Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-profundo: #003d6f;
+      --verde-lima: #d3e659;
+      --verde-agua: #50c2c9;
+    }
+
+    body {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      margin: 0;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background-color: var(--azul-profundo);
+      padding: 1.5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      animation: fadeInDown 1s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    nav img {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      color: var(--azul-profundo);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--verde-agua);
+      color: white;
+    }
+
+    #MKV {
+      background-color: var(--verde-lima);
+      padding: 0.5em 1em;
+      border: solid 2px white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #MKV:hover {
+      background-color: #c4db4f;
+      transform: scale(1.1);
+    }
+
+    .contact-button {
+      background-color: var(--verde-lima);
+      color: #003d6f;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: pulse 2s infinite, bounceIn 1s ease;
+      display: block;
+      margin: 2rem auto;
+    }
+
+    .contact-button:hover {
+      background-color: #c4db4f;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 230, 89, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(211, 230, 89, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 230, 89, 0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .main-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin: 1rem 0 0.5rem;
+      color: var(--azul-profundo);
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1s ease;
+    }
+
+    .main-subtitle {
+      font-size: 1.3rem;
+      color: #2a5c86;
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease;
+    }
+
+    footer {
+      background-color: var(--azul-profundo);
+      color: white;
+      text-align: center;
+      padding: 5% 2%;
+    }
+
+    footer p, footer a {
+      margin: 0.5em 0;
+      font-size: 1em;
+    }
+
+    .redes {
+      margin-top: 2%;
+    }
+
+    .redes img {
+      margin: 0 1%;
+      height: 2.5vw;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .redes img:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- código existente arriba -->
+  <nav>
+    <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo"></a>
+    <div class="nav-links">
+      <a href="Nosotros.html">Nosotros</a>
+      <div class="dropdown">
+        <a href="Servicios.html">Servicios</a>
+        <div class="dropdown-content">
+          <a href="preventivo.html">Mantenimiento preventivo</a>
+          <a href="correctivo.html">Mantenimiento correctivo</a>
+          <a href="metalmecanico.html">Metalmecánico</a>
+          <a href="balanceo.html">Balanceos</a>
+          <a href="reparación.html">Reparación de piezas</a>
+        </div>
+      </div>
+    <div class="dropdown">
+          <a href="ventas.html" class="dropbtn">Ventas</a>
+          <div class="dropdown-content">
+            <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+            <a href="Refacciones.html">Refacciones</a>
+          </div>
+        </div>
+      <a href="contacto.html" id="MKV">Contáctanos</a>
+    </div>
+  </nav>
+  <section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
+    <h1 class="main-title">Reparación de Piezas</h1>
+    <p class="main-subtitle">Soluciones metalmecánicas especializadas para extender la vida útil de tus componentes críticos.</p>
+    <div class="w3-content w3-display-container">
+      <img src="img/reparacion1.jpg" style="width:100%">
+      <img src="img/reparacion2.jpg" style="width:100%">
+    </div>
+  </section>
+
+  <section class="w3-container w3-light-grey w3-padding-64" style="max-width: 1000px; margin: auto;">
+    <h2 class="main-title">¿Por qué reparar en lugar de reemplazar?</h2>
+    <ul>
+      <li>Ahorro significativo en costos</li>
+      <li>Recuperación de piezas difíciles de encontrar</li>
+      <li>Reducción de tiempos muertos operativos</li>
+      <li>Confiabilidad en procesos de soldadura, rectificado y maquinado</li>
+      <li>Personal capacitado y equipos de precisión</li>
+    </ul>
+  </section>
+
+  <button class="contact-button" onclick="document.getElementById('cotModal').style.display='block'">Solicita tu cotización</button>
+
+  <div id="cotModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4);">
+    <div class="modal-content" style="background:#fff; margin:10% auto; padding:2rem; border-radius:10px; max-width:600px;">
+      <span class="close" onclick="document.getElementById('cotModal').style.display='none'" style="float:right; font-size:28px; cursor:pointer">&times;</span>
+      <h2>Solicita tu Cotización</h2>
+      <p>Compártenos qué pieza deseas reparar y nos pondremos en contacto.</p>
+      <form action="https://formspree.io/f/mwplaagr" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required style="width:100%; padding:0.5rem; margin-bottom:1rem;"><br>
+        <input type="email" name="email" placeholder="Tu correo" required style="width:100%; padding:0.5rem; margin-bottom:1rem;"><br>
+        <textarea name="Pieza con su problema" placeholder="Describe la pieza y el problema" required style="width:100%; height:100px; padding:0.5rem;"></textarea><br>
+        <button type="submit" class="contact-button">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div style="max-width: 1000px; margin: auto;">
+      <p><strong>Centridek</strong></p>
+      <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
+      <p>Email: centridek@hotmail.com</p>
+      <p>Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+     <div class="redes">
+        <a href="#"><img src="facebook.png" alt="Facebook" height="2%"></a>
+        <a href="#"><img src="whats.png" alt="Whatsapp" height="2%"></a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
