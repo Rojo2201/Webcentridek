@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máquinas Reacondicionadas | Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+   <style>
+    /* Mantener todos los estilos anteriores */
+        :root {
+      --verde-lima: #afc91f;
+      --azul-profundo: #003d6f;
+      --azul-intermedio: #0072b1;
+      --verde-agua: #339a9d;
+      --verde-oscuro: #2b6e67;
+      --fondo-oscuro: #0d1b2a;
+      --texto-claro: #e0e1dd;
+    }
+   html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f7f6;
+      color: #1a1a1a;
+      animation: fadeIn 1s ease-in;
+    }
+
+    nav {
+      background-color: var(--azul-profundo);
+      padding: 1.5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      animation: fadeInDown 1s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav img {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      color: var(--azul-profundo);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--verde-agua);
+      color: white;
+    }
+
+    #MKV {
+      background-color: var(--verde-lima);
+      padding: 0.5em 1em;
+      border: solid 2px white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #MKV:hover {
+      background-color: #d3e659;
+      transform: scale(1.1);
+    }
+
+    header {
+      background-color: var(--azul-profundo);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #cfeeff;
+    }
+
+    .highlight-title {
+      text-align: center;
+      font-size: 4em;
+      font-weight: bold;
+      margin-top: 5%;
+      color: var(--verde-oscuro);
+    }
+
+    .filtro {
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .filtro button {
+      background-color: var(--azul-intermedio);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      margin: 0 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .filtro button:hover {
+      background-color: var(--azul-profundo);
+    }
+
+    .filtro button.activo {
+      background-color: #005a8c;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeIn 1s ease-in;
+    }
+    .galeria .producto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .galeria .producto img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .galeria .producto h3 {
+      color: var(--azul-profundo);
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    .galeria .producto p {
+      color: #444;
+      font-size: 0.95rem;
+      margin: 0.5rem 0 1rem;
+      text-align: center;
+    }
+
+    .galeria .producto a.w3-button {
+      align-self: center;
+    }
+
+    .oculto {
+      display: none !important;
+    }
+
+    .boton-cotizacion {
+      display: block;
+      margin: 2rem auto;
+      background-color: var(--verde-agua);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .boton-cotizacion:hover {
+      background-color: var(--verde-oscuro);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .volver-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .volver-links {
+        flex-direction: column;
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: var(--fondo-oscuro);
+      color: var(--texto-claro);
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      font-family: 'Roboto', sans-serif;
+      animation: zoomIn 0.5s ease;
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .modal-content button {
+      background-color: var(--azul-profundo);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: var(--azul-profundo);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .redes img {
+      width: 32px;
+      height: 32px;
+      margin: 0 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .redes img:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 1em;
+      }
+
+      .highlight-title {
+        font-size: 2.5em;
+        padding: 0 5%;
+      }
+    }
+
+    .w3-button {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .w3-button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+<!-- CONTENIDO OMITIDO POR ESPACIO -->
+ <header>
+    <nav>
+      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
+      <div class="nav-links">
+        <a href="Nosotros.html">Nosotros</a>
+        <div class="dropdown">
+          <a href="Servicios.html">Servicios</a>
+          <div class="dropdown-content">
+            <a href="#preventivo">Mantenimiento Preventivo</a>
+            <a href="#correctivo">Mantenimiento Correctivo</a>
+            <a href="#balanceo">Balanceo</a>
+            <a href="#refacciones">Refacciones</a>
+            <a href="#metalmecanico">Metalmecánico</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="ventas.html" class="dropbtn">Ventas</a>
+          <div class="dropdown-content">
+            <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+            <a href="Refacciones.html">Refacciones</a>
+          </div>
+        </div>
+        <a href="contacto.html" id="MKV">Contáctanos</a>
+      </div>
+    </nav>
+  </header>
+  <section class="container">
+    <h1 class="highlight-title">Refacciones</h1>
+    <section class="filtro">
+      <button onclick="filtrar('inmediata')"><i class="fas fa-box-open"></i> Entrega inmediata</button>
+      <button onclick="filtrar('proximamente')"><i class="fas fa-clock"></i> Entrega próxima</button>
+      <button onclick="filtrar('todas')"><i class="fas fa-eye"></i> Ver todas</button>
+    </section>
+<section class="galeria">
+  <div class="producto inmediata">
+    <a href="producto1.html"><img src="producto1.jpg" alt="Producto 1"></a>
+    <h3>Centrífuga Alfa Laval</h3>
+    <p>Reacondicionada, lista para operar.</p>
+    <a href="producto1.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto inmediata">
+    <a href="producto2.html"><img src="producto2.jpg" alt="Producto 2"></a>
+    <h3>Decantadora Flottweg</h3>
+    <p>Alta capacidad y rendimiento.</p>
+    <a href="producto2.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto proximamente">
+    <a href="producto3.html"><img src="producto3.jpg" alt="Producto 3"></a>
+    <h3>Centrífuga Pieralisi</h3>
+    <p>Con refacciones originales y puesta a punto.</p>
+    <a href="producto3.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto inmediata">
+    <a href="producto4.html"><img src="producto4.jpg" alt="Producto 4"></a>
+    <h3>Decantadora Westfalia</h3>
+    <p>Revisada completamente y garantizada.</p>
+    <a href="producto4.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto proximamente">
+    <a href="producto5.html"><img src="producto5.jpg" alt="Producto 5"></a>
+    <h3>Centrífuga Krauss-Maffei</h3>
+    <p>Especial para procesos químicos e industriales.</p>
+    <a href="producto5.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto inmediata">
+    <a href="producto6.html"><img src="producto6.jpg" alt="Producto 6"></a>
+    <h3>Centrífuga Andritz</h3>
+    <p>Reacondicionada con tecnología de punta.</p>
+    <a href="producto6.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto proximamente">
+    <a href="producto7.html"><img src="producto7.jpg" alt="Producto 7"></a>
+    <h3>Decantadora Sharples</h3>
+    <p>Ideal para industrias alimenticias.</p>
+    <a href="producto7.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto inmediata">
+    <a href="producto8.html"><img src="producto8.jpg" alt="Producto 8"></a>
+    <h3>Centrífuga Flottweg pequeña</h3>
+    <p>Perfecta para procesos piloto.</p>
+    <a href="producto8.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+  <div class="producto proximamente">
+    <a href="producto9.html"><img src="producto9.jpg" alt="Producto 9"></a>
+    <h3>Decantadora Alfa Laval industrial</h3>
+    <p>Gran capacidad, actualmente en reacondicionamiento.</p>
+    <a href="producto9.html" class="w3-button w3-blue w3-round-large w3-margin-top">
+      <i class="fas fa-search"></i> Ver más detalles
+    </a>
+  </div>
+</section>
+     <button class="boton-cotizacion" onclick="document.getElementById('modalCotizar').style.display='block'">Solicitar cotización rápida</button>
+
+  <div id="modalCotizar" class="modal">
+    <div class="modal-content">
+      <h3>Solicita una cotización</h3>
+      <input type="text" placeholder="Tu nombre">
+      <input type="email" placeholder="Tu correo electrónico">
+      <textarea placeholder="Refaccion o refacciones que necesitas"></textarea>
+      <button onclick="document.getElementById('modalCotizar').style.display='none'">Enviar</button>
+    </div>
+  </div>
+  ...
+  ...
+  <div> <div class="volver-links w3-center w3-padding-16">
+        <a href="ventas.html" class="w3-button w3-blue w3-round-large w3-margin-right">
+          <i class="fas fa-arrow-left"></i> Volver a ventas
+        </a>
+        <a href="Refacciones.html" class="w3-button w3-green w3-round-large">
+          <i class="fas fa-cogs"></i> Ver máquinas reacondicionadas
+        </a>
+      </div>
+    </div>
+      <footer>
+    <div style="max-width: 1000px; margin: auto;">
+      <p><strong>Centridek</strong></p>
+      <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194</p>
+      <p>Email: centridek@hotmail.com</p>
+      <p>Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/Centridek" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Facebook"></a>
+        <a href="https://wa.me/527779025195" target="_blank" rel="noopener noreferrer"><img src="whats.png" alt="Whatsapp"></a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+    <script>
+  // Cerrar modal al hacer clic fuera de él
+  window.onclick = function(event) {
+    const modal = document.getElementById('modalCotizar');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+  <script>
+  function filtrar(clase) {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(producto => {
+      if (clase === 'todas') {
+        producto.style.display = 'block';
+      } else if (producto.classList.contains(clase)) {
+        producto.style.display = 'block';
+      } else {
+        producto.style.display = 'none';
+      }
+    });
+
+    const botones = document.querySelectorAll('.filtro button');
+    botones.forEach(btn => btn.classList.remove('activo'));
+    const botonActivo = Array.from(botones).find(btn => btn.textContent.toLowerCase().includes(clase));
+    if (botonActivo) botonActivo.classList.add('activo');
+  }
+</script>
+
+<!-- CONTENIDO FINAL OMITIDO POR ESPACIO -->
+</body>
+</html>
+
+
+
+
+
+
