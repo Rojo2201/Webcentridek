@@ -313,10 +313,10 @@
     <span class="close" onclick="document.getElementById('cotModal').style.display='none'">&times;</span>
     <h2>Solicita tu Cotización</h2>
     <p>Envíanos los detalles del servicio que necesitas y te contactaremos a la brevedad.</p>
-    <form>
-      <input type="text" placeholder="Nombre" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;"><br>
-      <input type="email" placeholder="Correo electrónico" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;"><br>
-      <textarea placeholder="Mensaje" style="width: 90%; height: 100px; margin: 0.5rem 0; padding: 0.5rem;"></textarea><br>
+    <form action="https://formspree.io/f/mvgkddeb" method="post">
+      <input type="text" placeholder="Nombre" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;" name="nombre"><br>
+      <input type="email" placeholder="Correo electrónico" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;" name="email"><br>
+      <textarea placeholder="¿Qué maquina es?" style="width: 90%; height: 100px; margin: 0.5rem 0; padding: 0.5rem;"name="Que maquina es"></textarea><br>
       <button type="submit" class="contact-button" style="margin: 1rem auto;">Enviar</button>
     </form>
   </div>
