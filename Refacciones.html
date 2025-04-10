@@ -474,11 +474,13 @@
 
   <div id="modalCotizar" class="modal">
     <div class="modal-content">
+ <form action= "https://formspree.io/f/xaneaarw" method="post">
       <h3>Solicita una cotización</h3>
-      <input type="text" placeholder="Tu nombre">
-      <input type="email" placeholder="Tu correo electrónico">
-      <textarea placeholder="Refaccion o refacciones que necesitas"></textarea>
-      <button onclick="document.getElementById('modalCotizar').style.display='none'">Enviar</button>
+      <input type="text" placeholder="Tu nombre" name="Nombre">
+      <input type="email" placeholder="Tu correo electrónico" name="e-mail">
+      <textarea placeholder="Especificaciones o modelo de interés" name="Mensaje del cliente"></textarea>
+      <button onclick="document.getElementById('modalCotizar').style.display='none'" type="submit">Enviar</button>
+	  </form>
     </div>
   </div>
   ...
