@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mantenimiento Preventivo | Centridek</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-profundo: #003d6f;
+      --verde-lima: #d3e659;
+      --verde-agua: #50c2c9;
+    }
+
+    body {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      margin: 0;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background-color: var(--azul-profundo);
+      padding: 1.5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      animation: fadeInDown 1s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    nav img {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      color: var(--azul-profundo);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--verde-agua);
+      color: white;
+    }
+
+    #MKV {
+      background-color: var(--verde-lima);
+      padding: 0.5em 1em;
+      border: solid 2px white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #MKV:hover {
+      background-color: #c4db4f;
+      transform: scale(1.1);
+    }
+
+    .contact-button {
+      background-color: var(--verde-lima);
+      color: #003d6f;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.2rem;
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      border-radius: 12px;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: pulse 2s infinite, bounceIn 1s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #c4db4f;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(211, 230, 89, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(211, 230, 89, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(211, 230, 89, 0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .main-title {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin: 1rem 0 0.5rem;
+      color: var(--azul-profundo);
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1s ease;
+    }
+
+    .main-subtitle {
+      font-size: 1.3rem;
+      color: #2a5c86;
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease;
+    }
+  </style>
+</head>
+<body>
+<!-- el resto del código permanece igual -->
+<header class="w3-container w3-padding-32" style="background-color: #003d6f; color: white; text-align: center;">
+  <nav>
+  <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo"></a>
+  <div class="nav-links">
+    <a href="Nosotros.html">Nosotros</a>
+    <div class="dropdown">
+      <a href="#">Servicios</a>
+      <div class="dropdown-content">
+        <a href="MantenimientoPreventivo.html">Mantenimiento Preventivo</a>
+        <a href="Mantenimiento correctivo.html">Mantenimiento Correctivo</a>
+        <a href="Balanceo.html">Balanceo</a>
+        <a href="Refacciones.html">Refacciones</a>
+        <a href="Metalmecanico.html">Metalmecánico</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="ventas.html" class="dropbtn">Ventas</a>
+      <div class="dropdown-content">
+        <a href="Maquinas reacondicionadas.html">Máquinas reacondicionadas</a>
+        <a href="Refacciones.html">Refacciones</a>
+      </div>
+    </div>
+    <a href="contacto.html" id="MKV">Contáctanos</a>
+  </div>
+</nav>
+ </header>
+
+ <h1 class="main-title">Mantenimiento Preventivo</h1>
+ <p class="main-subtitle">Cuidamos tu equipo para que nunca se detenga</p>
+
+<section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <h2 style="font-family: 'Sofia Sans Condensed', sans-serif;">¿Qué es el Mantenimiento Preventivo?</h2>
+  <p style="font-size: 1.1rem; line-height: 1.6;">
+    El mantenimiento preventivo consiste en una revisión periódica y programada de tus equipos con el fin de detectar y prevenir posibles fallas antes de que ocurran. Es una inversión que garantiza la disponibilidad y prolonga la vida útil de tus máquinas.
+  </p>
+</section>
+<section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <h2 style="font-family: 'Sofia Sans Condensed', sans-serif;">¿Qué incluye nuestro servicio?</h2>
+  <p style="font-size: 1.1rem; line-height: 1.6;">
+    Nuestro servicio de mantenimiento preventivo está diseñado para brindar atención integral y especializada a tus equipos. Entre las actividades que realizamos se encuentran:
+  </p>
+  <ul style="font-size: 1.1rem; line-height: 1.8; list-style-type: disc; padding-left: 1.5em;">
+    <li>Revisión y ajuste de componentes mecánicos</li>
+    <li>Lubricación de partes móviles</li>
+    <li>Inspección de vibraciones y balanceo dinámico</li>
+    <li>Verificación del estado de rodamientos y sellos</li>
+    <li>Medición de desgaste y tolerancias críticas</li>
+    <li>Pruebas funcionales y operativas</li>
+    <li>Recomendaciones técnicas para mejoras preventivas</li>
+  </ul>
+</section>
+
+
+<section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <div class="w3-content w3-display-container">
+    <img class="mySlides" src="preventivo1.jpg" style="width:100%">
+    <img class="mySlides" src="preventivo2.jpg" style="width:100%">
+    <img class="mySlides" src="preventivo3.jpg" style="width:100%">
+
+    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+</section>
+<section class="w3-container w3-light-grey w3-padding-64" style="max-width: 1000px; margin: auto;">
+  <h2 style="font-family: 'Sofia Sans Condensed', sans-serif;">Beneficios del Mantenimiento Preventivo</h2>
+  <ul style="font-size: 1.1rem; line-height: 1.8; list-style: none; padding-left: 0;">
+    <li>✔️ Mayor vida útil de tus equipos</li>
+    <li>✔️ Menor probabilidad de fallas inesperadas</li>
+    <li>✔️ Reducción de costos por reparación</li>
+    <li>✔️ Optimización del rendimiento</li>
+    <li>✔️ Seguridad para tu personal y operaciones</li>
+  </ul>
+</section>
+<section class="w3-container w3-center w3-padding-64">
+  <a href="contacto.html" class="contact-button">Solicita tu cotización</a>
+</section>
+
+<script>
+let slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  let i;
+  let x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
