@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicio Metalmecánico | Centridek</title>
+  <title>Balanceos | Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
@@ -230,32 +231,30 @@
 <body>
 
 <!-- código existente arriba -->
-  <header>
-    <nav>
-      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
-      <div class="nav-links">
-        <a href="Nosotros.html">Nosotros</a>
-        <div class="dropdown">
-          <a href="Servicios" class="dropbtn">Servicios</a>
+  <nav>
+    <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo"></a>
+    <div class="nav-links">
+      <a href="Nosotros.html">Nosotros</a>
+      <div class="dropdown">
+        <a href="Servicios.html">Servicios</a>
+        <div class="dropdown-content">
+          <a href="preventivo.html">Mantenimiento preventivo</a>
+          <a href="correctivo.html">Mantenimiento correctivo</a>
+          <a href="metalmecanico.html">Metalmecánico</a>
+          <a href="balanceo.html">Balanceos</a>
+          <a href="refacciones.html">Reparación de piezas</a>
+        </div>
+      </div>
+    <div class="dropdown">
+          <a href="ventas.html" class="dropbtn">Ventas</a>
           <div class="dropdown-content">
-           <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
-            <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
-            <a href="Metalmecanico.html">Metalmecánico</a>
-            <a href="Balanceo.html">Balanceos</a>
-            <a href="reparación.html">Reparación de piezas</a>
+            <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+            <a href="Refacciones.html">Refacciones</a>
           </div>
         </div>
-       <div class="dropdown">
-        <a href="ventas.html" class="dropbtn">Ventas</a>
-        <div class="dropdown-content">
-          <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
-          <a href="Refacciones.html">Refacciones</a>
-        </div>
-      </div>
-        <a href="contacto.html" id="MKV">Contáctanos</a>
-      </div>
-    </nav>
-  </header>
+      <a href="contacto.html" id="MKV">Contáctanos</a>
+    </div>
+  </nav>
 
   <section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
     <h2 class="main-title">Servicio de Balanceo Dinámico</h2>
@@ -289,9 +288,9 @@
     <h2>Solicita tu Cotización</h2>
     <p>Envíanos los detalles del servicio que necesitas y te contactaremos a la brevedad.</p>
     <form action="https://formspree.io/f/meoavvyg" method="post">
-      <input type="text" placeholder="Nombre" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;"><br>
-      <input type="email" placeholder="Correo electrónico" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;"><br>
-      <textarea placeholder="¿Qué te balanceamos?" style="width: 90%; height: 100px; margin: 0.5rem 0; padding: 0.5rem;"></textarea><br>
+      <input type="text" placeholder="Nombre" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;" name="Nombre"><br>
+      <input type="email" placeholder="Correo electrónico" style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;" name="email"><br>
+      <textarea placeholder="¿Qué te balanceamos?" style="width: 90%; height: 100px; margin: 0.5rem 0; padding: 0.5rem;" name="Pieza a balancear"></textarea><br>
       <button type="submit" class="contact-button" style="margin: 1rem auto;">Enviar</button>
     </form>
   </div>
