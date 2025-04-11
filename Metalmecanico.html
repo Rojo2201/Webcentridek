@@ -156,7 +156,8 @@
       margin-bottom: 2rem;
       animation: fadeIn 2s ease;
     }
-       footer {
+
+    footer {
       background-color: var(--azul-profundo);
       color: white;
       text-align: center;
@@ -183,40 +184,80 @@
       opacity: 0.8;
     }
 
+    /* MODAL STYLES */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+    }
+
     @media (max-width: 768px) {
       .columns {
         flex-direction: column;
       }
+    }
   </style>
 </head>
 <body>
 <header>
-    <nav>
-      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
-      <div class="nav-links">
-        <a href="Nosotros.html">Nosotros</a>
-        <div class="dropdown">
-          <a href="Servicios" class="dropbtn">Servicios</a>
-          <div class="dropdown-content">
-           <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
-            <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
-            <a href="Metalmecanico.html">Metalmecánico</a>
-            <a href="Balanceo.html">Balanceos</a>
-            <a href="reparación.html">Reparación de piezas</a>
-          </div>
+  <nav>
+    <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo"></a>
+    <div class="nav-links">
+      <a href="Nosotros.html">Nosotros</a>
+      <div class="dropdown">
+        <a href="Servicios.html">Servicios</a>
+        <div class="dropdown-content">
+          <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
+          <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
+          <a href="Metalmecanico.html">Metalmecánico</a>
+          <a href="Balanceo.html">Balanceos</a>
+          <a href="Reparación de piezas.html">Reparación de piezas</a>
         </div>
-       <div class="dropdown">
+      </div>
+      <div class="dropdown">
         <a href="ventas.html" class="dropbtn">Ventas</a>
         <div class="dropdown-content">
           <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
           <a href="Refacciones.html">Refacciones</a>
         </div>
       </div>
-        <a href="contacto.html" id="MKV">Contáctanos</a>
-      </div>
-    </nav>
-  </header>
-<!-- Sección de Servicio Metalmecánico -->
+      <a href="contacto.html" id="MKV">Contáctanos</a>
+    </div>
+  </nav>
+</header>
+
 <section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
   <h2 class="main-title">¿Qué es el Servicio Metalmecánico?</h2>
   <p class="main-subtitle">
@@ -295,20 +336,51 @@
     <li>⚙️ Mejora en la eficiencia y durabilidad de los componentes</li>
     <li>⚙️ Asesoría técnica especializada</li>
   </ul>
-  <button class="contact-button">Solicita tu cotización</button>
 </section>
-    <footer>
-    <div style="max-width: 1000px; margin: auto;">
-      <p><strong>Centridek</strong></p>
-      <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
-      <p>Email: centridek@hotmail.com</p>
-      <p> Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
-       <div class="redes">
-        <a href="#"><img src="facebook.png" alt="Facebook" height="2%"></a>
-        <a href="#"><img src="whats.png" alt="Whatsapp" height="2%"></a>
-      </div>
-      <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+
+<!-- Botón de cotización -->
+<button class="contact-button" onclick="document.getElementById('cotModal').style.display='block'">Solicita tu cotización</button>
+
+<!-- Modal -->
+<div id="cotModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('cotModal').style.display='none'">&times;</span>
+    <h2>Solicita tu Cotización</h2>
+    <p>Envíanos los detalles del servicio que necesitas y te contactaremos a la brevedad.</p>
+    <form action="https://formspree.io/f/mzzeyyne" method="post">
+      <input type="text" name="Nombre" placeholder="Nombre" required style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;"><br>
+      <input type="email" name="email" placeholder="Correo electrónico" required style="width: 90%; margin: 0.5rem 0; padding: 0.5rem;"><br>
+      <textarea name="Trabajo a hacer" placeholder="¿En qué te ayudamos?" required style="width: 90%; height: 100px; margin: 0.5rem 0; padding: 0.5rem;"></textarea><br>
+      <button type="submit" class="contact-button" style="margin: 1rem auto;">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div style="max-width: 1000px; margin: auto;">
+    <p><strong>Centridek</strong></p>
+    <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
+    <p>Email: centridek@hotmail.com</p>
+    <p> Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+    <div class="redes">
+      <a href="#"><img src="facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="whats.png" alt="Whatsapp"></a>
     </div>
-  </footer>
+    <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Script para cerrar el modal al hacer clic fuera de él -->
+<script>
+  window.onclick = function(event) {
+    const modal = document.getElementById('cotModal');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
 </body>
 </html>
+
