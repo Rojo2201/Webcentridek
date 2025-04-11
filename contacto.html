@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contáctanos | Centridek</title>
+  <link rel="icon" type="image/png" href="Logo flat.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-profundo: #003d6f;
+      --verde-lima: #d3e659;
+      --verde-agua: #50c2c9;
+    }
+
+    body {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      margin: 0;
+      animation: fadeIn 1s ease-in;
+      background-color: var(--azul-profundo);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    nav {
+      background-color: var(--verde-lima);
+      padding: 1.5% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      animation: fadeInDown 1s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav img {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--azul-profundo);
+      text-decoration: none;
+      font-size: 1.2em;
+      font-family: 'Roboto', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--azul-profundo);
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--verde-agua);
+      color: var(--azul-profundo);
+    }
+
+    #MKV {
+      background-color: var(--azul-profundo);
+      padding: 0.5em 1em;
+      border: solid 2px white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      color: white;
+    }
+
+    #MKV:hover {
+      background-color: #002f55;
+      transform: scale(1.1);
+    }
+
+    .main {
+      padding: 3rem 1rem;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      color: var(--verde-lima);
+      margin-bottom: 0.5rem;
+    }
+
+    .main p {
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background-color: var(--verde-lima);
+      color: var(--azul-profundo);
+      border: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #c4db4f;
+    }
+
+    footer {
+      background-color: var(--verde-lima);
+      color: var(--azul-profundo);
+      text-align: center;
+      padding: 5% 2%;
+    }
+
+    footer p, footer a {
+      margin: 0.5em 0;
+      font-size: 1em;
+    }
+
+    .redes {
+      margin-top: 2%;
+    }
+
+    .redes img {
+      margin: 0 1%;
+      height: 2.5vw;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .redes img:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .redes img {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo"></a>
+    <div class="nav-links">
+      <a href="Nosotros.html">Nosotros</a>
+      <div class="dropdown">
+        <a href="Servicios.html">Servicios</a>
+        <div class="dropdown-content">
+          <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
+          <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
+          <a href="Metalmecanico.html">Metalmecánico</a>
+          <a href="Balanceo.html">Balanceos</a>
+          <a href="Reparación de piezas.html">Reparación de piezas</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="ventas.html" class="dropbtn">Ventas</a>
+        <div class="dropdown-content">
+          <a href="Maquinas reacondicionadas.html">Máquinas reacondicionadas</a>
+          <a href="Refacciones.html">Refacciones</a>
+        </div>
+      </div>
+      <a href="contacto.html" id="MKV">Contáctanos</a>
+    </div>
+  </nav>
+</header>
+<main class="main">
+  <h1>Contáctanos</h1>
+  <p>En Centridek estamos listos para ayudarte. Llena el siguiente formulario y te responderemos lo antes posible.</p>
+  <form action="https://formspree.io/f/xjkylbvk" method="POST">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="text" name="empresa" placeholder="Tu empresa">
+    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+    <input type="text" name="asunto" placeholder="Asunto" required>
+    <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" rows="6" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</main>
+<footer>
+  <div style="max-width: 1000px; margin: auto;">
+    <p><strong>Centridek</strong></p>
+    <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194 </p>
+    <p>Email: centridek@hotmail.com</p>
+    <p> Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
+    <div class="redes">
+      <a href="#"><img src="facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="whats.png" alt="Whatsapp"></a>
+    </div>
+    <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
+
