@@ -226,36 +226,92 @@
       text-decoration: none;
       cursor: pointer;
     }
+    .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: white;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--azul-profundo);
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: var(--azul-profundo);
+  }
+
+  .dropdown-content a {
+    color: white;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+}
+
   </style>
 </head>
 <body>
 
 <!-- código existente arriba -->
  <header>
-    <nav>
-      <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
-      <div class="nav-links">
-        <a href="Nosotros.html">Nosotros</a>
-        <div class="dropdown">
-          <a href="Servicios" class="dropbtn">Servicios</a>
-          <div class="dropdown-content">
-           <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
-            <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
-            <a href="Metalmecanico.html">Metalmecánico</a>
-            <a href="balanceo.html">Balanceos</a>
-            <a href="reparación.html">Reparación de piezas</a>
-          </div>
-        </div>
-       <div class="dropdown">
-        <a href="ventas.html" class="dropbtn">Ventas</a>
-        <div class="dropdown-content">
-          <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
-          <a href="Refacciones.html">Refacciones</a>
-        </div>
+<nav>
+  <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="Nosotros.html">Nosotros</a>
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#" class="dropbtn">Servicios</a>
+      <div class="dropdown-content">
+        <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
+        <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
+        <a href="Metalmecanico.html">Metalmecánico</a>
+        <a href="balanceo.html">Balanceos</a>
+        <a href="reparación.html">Reparación de piezas</a>
       </div>
-        <a href="contacto.html" id="MKV">Contáctanos</a>
+    </div>
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#" class="dropbtn">Ventas</a>
+      <div class="dropdown-content">
+        <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+        <a href="Refacciones.html">Refacciones</a>
       </div>
-    </nav>
+    </div>
+    <a href="contacto.html" id="MKV">Contáctanos</a>
+  </div>
+</nav>
+
   </header>
   <section class="w3-container w3-padding-64" style="max-width: 1000px; margin: auto;">
     <h1 class="main-title">Reparación de Piezas</h1>
@@ -307,4 +363,14 @@
     </div>
   </footer>
 </body>
+  <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+
+  function toggleDropdown(el) {
+    el.classList.toggle('open');
+  }
+</script>
+
 </html>
