@@ -401,13 +401,36 @@
   </footer>
   <script>
   function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+
+    // Cierra todos los dropdowns si se cierra el menú general
+    if (!nav.classList.contains('active')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    }
   }
 
   function toggleDropdown(el) {
-    el.classList.toggle('open');
+    const isOpen = el.classList.contains('open');
+
+    // Cierra todos los demás dropdowns
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+
+    // Si no estaba abierto, abre el actual
+    if (!isOpen) {
+      el.classList.add('open');
+    }
   }
+
+  // Para que al tocar fuera del menú se cierre en móviles
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = event.target.closest('nav');
+    if (!isClickInsideMenu) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
 </script>
+
 
 </body>
 </html>
