@@ -359,122 +359,195 @@
     .w3-button:hover {
       transform: scale(1.05);
     }
+	.zoom-container {
+  transition: transform 0.4s ease-in-out, z-index 0.2s;
+  z-index: 1;
+  text-align: center;
+}
+
+.zoom-container.zoomed {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(2.2) !important;
+  z-index: 9999 !important;
+  background-color: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.4s ease-in-out;
+}
+
+
+.zoom-container h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  transition: font-size 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease-in-out, z-index 0.2s;
+  z-index: 1;
+  padding: 1rem;
+}
+
+
+
+
+.carousel img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  /* sin transform ni scale aquí */
+}
+
   </style>
 </head>
 <body>
-<!-- CONTENIDO OMITIDO POR ESPACIO -->
 <header>
     <nav>
       <a href="index.html"><img src="Logo flat.png" alt="Centridek Logo" height="50"></a>
       <div class="nav-links">
         <a href="Nosotros.html">Nosotros</a>
         <div class="dropdown">
-          <a href="Servicios" class="dropbtn">Servicios</a>
+          <a href="Servicios.html">Servicios</a>
           <div class="dropdown-content">
-           <a href="Mantenimiento preventivo.html">Mantenimiento preventivo</a>
-            <a href="Mantenimiento correctivo.html">Mantenimiento correctivo</a>
-            <a href="Metalmecanico.html">Metalmecánico</a>
-            <a href="balanceo.html">Balanceos</a>
-            <a href="reparación.html">Reparación de piezas</a>
+            <a href="#preventivo">Mantenimiento Preventivo</a>
+            <a href="#correctivo">Mantenimiento Correctivo</a>
+            <a href="#balanceo">Balanceo</a>
+            <a href="#refacciones">Refacciones</a>
+            <a href="#metalmecanico">Metalmecánico</a>
           </div>
         </div>
-       <div class="dropdown">
-        <a href="ventas.html" class="dropbtn">Ventas</a>
-        <div class="dropdown-content">
-          <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
-          <a href="Refacciones.html">Refacciones</a>
+        <div class="dropdown">
+          <a href="ventas.html" class="dropbtn">Ventas</a>
+          <div class="dropdown-content">
+            <a href="Maquinas reacondicionadas.html">Maquinas reacondicionadas</a>
+            <a href="Refacciones.html">Refacciones</a>
+          </div>
         </div>
-      </div>
         <a href="contacto.html" id="MKV">Contáctanos</a>
       </div>
     </nav>
   </header>
-  <section class="container">
-    <h1 class="highlight-title">Maquinas Reacondicionadas</h1>
-    <section class="filtro">
-      <button onclick="filtrar('inmediata')"><i class="fas fa-box-open"></i> Entrega inmediata</button>
-      <button onclick="filtrar('proximamente')"><i class="fas fa-clock"></i> Entrega próxima</button>
-      <button onclick="filtrar('todas')"><i class="fas fa-eye"></i> Ver todas</button>
-    </section>
-<section class="galeria">
-  <div class="producto inmediata">
-    <a href="producto1.html"><img src="producto1.jpg" alt="Producto 1"></a>
-    <h3>Centrífuga Alfa Laval</h3>
-    <p>Reacondicionada, lista para operar.</p>
-    <a href="producto1.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
+  <!-- Filtros -->
+  <div class="filtro w3-center">
+    <button class="activo" onclick="filtrar('todas', this)">Todas</button>
+    <button onclick="filtrar('inmediata', this)">Entrega Inmediata</button>
+    <button onclick="filtrar('proximamente', this)">Próximamente</button>
   </div>
-  <div class="producto inmediata">
-    <a href="producto2.html"><img src="producto2.jpg" alt="Producto 2"></a>
-    <h3>Decantadora Flottweg</h3>
-    <p>Alta capacidad y rendimiento.</p>
-    <a href="producto2.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
+
+  <!-- Galería de productos -->
+  <div class="galeria">
+
+    <!-- Producto 1 -->
+    <div class="producto inmediata">
+      <div class="zoom-container">
+        <div class="carousel" data-images='["Maquina 1-1.png", "Maquina 1-2.png", "Maquina 1-3.png", "Maquina 1-4.png", "Maquina 1-5.png"]'>
+          <img src="Maquina 1-1.png" alt="OSM 150006">
+        </div>
+        <h3>OSM 150006</h3>
+        <p>Disponible para entrega inmediata</p>
+      </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="producto inmediata">
+      <div class="zoom-container">
+        <div class="carousel" data-images='["Maquina 2-1.png", "Maquina 2-2.png","Maquina 2-3.png", "Maquina 2-4.png","Maquina 2-5.png", "Maquina 2-6.png"]'>
+          <img src="Maquina 2-1.png" alt="RTA 140-51-076">
+        </div>
+        <h3>RTA 140-51-076</h3>
+        <p>Disponible para entrega inmediata</p>
+      </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='["Maquina 3-1.png", "Maquina 3-2.png","Maquina 3-3.png", "Maquina 3-4.png","Maquina 3-5.png"]'>
+          <img src= "Maquina 3-1.png" alt="Centrífuga WESTFALIA">
+        </div>
+        <h3>RTA 45-51-576</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='["Maquina 4-1.png", "Maquina 4-2.png","Maquina 4-3.png", "Maquina 4-4.png","Maquina 4-5.png", "Maquina 4-6.png"]'>
+          <img src="Maquina 4-1.png" alt="RTA 4501-074">
+        </div>
+        <h3>RTA 4501-074</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
+    <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='[ "Maquina 5-1.png", "Maquina 5-2.png"]'>
+          <img src="Maquina 5-1.png" alt="RTA 4501-074">
+        </div>
+        <h3>RTA 4501-074</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
+ <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='[ "Maquina 6-1.png", "Maquina 6-2.png"]'>
+          <img src="Maquina 6-1.png" alt="RTA 4501-074">
+        </div>
+        <h3>RTA 4501-074</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
+ <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='[ "Maquina 7-1.png", "Maquina 7-2.png","Maquina 7-3.png", "Maquina 7-4.png","Maquina 7-5.png"]'>
+          <img src="Maquina 7-1.png" alt="CENTRIFUGA">
+        </div>
+        <h3>CENTRIFUGA</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
+ <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='["Maquina 8-1.png", "Maquina 8-2.png","Maquina 8-3.png", "Maquina 8-4.png","Maquina 8-5.png"]'>
+          <img src="Maquina 8-1.png" alt="OSA 20-02-066  1681">
+        </div>
+        <h3>OSA 20-02-066  1681</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
+ <div class="producto proximamente">
+      <div class="zoom-container">
+        <div class="carousel" data-images='["Maquina 9-1.png", "Maquina 9-2.png","Maquina 9-3.png", "Maquina 9-4.png","Maquina 9-5.png", "Maquina 9-6.png"]'>
+          <img src="Maquina 9-1.png" alt="OSA 20-02-066 1682">
+        </div>
+        <h3>OSA 20-02-066 1682</h3>
+        <p>Próxima entrega</p>
+      </div>
+    </div>
+
   </div>
-  <div class="producto proximamente">
-    <a href="producto3.html"><img src="producto3.jpg" alt="Producto 3"></a>
-    <h3>Centrífuga Pieralisi</h3>
-    <p>Con refacciones originales y puesta a punto.</p>
-    <a href="producto3.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-  <div class="producto inmediata">
-    <a href="producto4.html"><img src="producto4.jpg" alt="Producto 4"></a>
-    <h3>Decantadora Westfalia</h3>
-    <p>Revisada completamente y garantizada.</p>
-    <a href="producto4.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-  <div class="producto proximamente">
-    <a href="producto5.html"><img src="producto5.jpg" alt="Producto 5"></a>
-    <h3>Centrífuga Krauss-Maffei</h3>
-    <p>Especial para procesos químicos e industriales.</p>
-    <a href="producto5.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-  <div class="producto inmediata">
-    <a href="producto6.html"><img src="producto6.jpg" alt="Producto 6"></a>
-    <h3>Centrífuga Andritz</h3>
-    <p>Reacondicionada con tecnología de punta.</p>
-    <a href="producto6.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-  <div class="producto proximamente">
-    <a href="producto7.html"><img src="producto7.jpg" alt="Producto 7"></a>
-    <h3>Decantadora Sharples</h3>
-    <p>Ideal para industrias alimenticias.</p>
-    <a href="producto7.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-  <div class="producto inmediata">
-    <a href="producto8.html"><img src="producto8.jpg" alt="Producto 8"></a>
-    <h3>Centrífuga Flottweg pequeña</h3>
-    <p>Perfecta para procesos piloto.</p>
-    <a href="producto8.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-  <div class="producto proximamente">
-    <a href="producto9.html"><img src="producto9.jpg" alt="Producto 9"></a>
-    <h3>Decantadora Alfa Laval industrial</h3>
-    <p>Gran capacidad, actualmente en reacondicionamiento.</p>
-    <a href="producto9.html" class="w3-button w3-blue w3-round-large w3-margin-top">
-      <i class="fas fa-search"></i> Ver más detalles
-    </a>
-  </div>
-</section>
-     <button class="boton-cotizacion" onclick="document.getElementById('modalCotizar').style.display='block'">Solicitar cotización rápida</button>
+  <button class="boton-cotizacion" onclick="document.getElementById('modalCotizar').style.display='block'">Solicitar cotización rápida</button>
 
   <div id="modalCotizar" class="modal">
     <div class="modal-content">
-	<form action= "https://formspree.io/f/mjkyjjqq" method="post">
+	<form action= "https://formspree.io/f/mqaqoogd" method="post">
       <h3>Solicita una cotización</h3>
       <input type="text" placeholder="Tu nombre" name="Nombre">
       <input type="email" placeholder="Tu correo electrónico" name="e-mail">
@@ -498,7 +571,7 @@
     <div style="max-width: 1000px; margin: auto;">
       <p><strong>Centridek</strong></p>
       <p>Teléfonos: +52 777 902 5195 o +52 777 375 3194</p>
-      <p>Email: centridek@hotmail.com</p>
+      <p>Email: cotizaciones@centridek.com</p>
       <p>Av. Insurgentes #25, Col. Centro, Jiutepec, Morelos, México</p>
       <div class="redes">
         <a href="https://www.facebook.com/Centridek" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Facebook"></a>
@@ -507,7 +580,7 @@
       <p style="margin-top: 1rem;">&copy; 2025 Centridek. Todos los derechos reservados.</p>
     </div>
   </footer>
-    <script>
+<script>
   // Cerrar modal al hacer clic fuera de él
   window.onclick = function(event) {
     const modal = document.getElementById('modalCotizar');
@@ -516,27 +589,91 @@
     }
   }
 </script>
-  <script>
-  function filtrar(clase) {
-    const productos = document.querySelectorAll('.producto');
-    productos.forEach(producto => {
-      if (clase === 'todas') {
-        producto.style.display = 'block';
-      } else if (producto.classList.contains(clase)) {
-        producto.style.display = 'block';
-      } else {
-        producto.style.display = 'none';
-      }
-    });
+  <!-- Scripts -->
+<script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const images = JSON.parse(carousel.dataset.images);
+  let current = 0;
+  const img = carousel.querySelector('img');
+  let interval;
 
-    const botones = document.querySelectorAll('.filtro button');
-    botones.forEach(btn => btn.classList.remove('activo'));
-    const botonActivo = Array.from(botones).find(btn => btn.textContent.toLowerCase().includes(clase));
-    if (botonActivo) botonActivo.classList.add('activo');
-  }
+  const originalImage = images[0]; // Guardamos la imagen inicial
+
+  carousel.addEventListener('mouseenter', () => {
+    interval = setInterval(() => {
+      current = (current + 1) % images.length;
+      img.src = images[current];
+    }, 1000); // velocidad de cambio
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    clearInterval(interval);
+    current = 0;
+    img.src = originalImage; // Volver a la imagen inicial
+  });
+});
 </script>
 
-<!-- CONTENIDO FINAL OMITIDO POR ESPACIO -->
+<script>
+    // Filtro de productos
+    function filtrar(tipo, btn) {
+      document.querySelectorAll('.producto').forEach(p => {
+        if (tipo === 'todas') {
+          p.classList.remove('oculto');
+        } else {
+          p.classList.toggle('oculto', !p.classList.contains(tipo));
+        }
+      });
+      document.querySelectorAll('.filtro button').forEach(b => b.classList.remove('activo'));
+      btn.classList.add('activo');
+    }
+  </script>
+<script>
+document.querySelectorAll('.zoom-container').forEach(container => {
+  container.style.cursor = 'pointer'; // cambiar cursor para indicar que es clickeable
+
+  container.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    const isZoomed = container.classList.contains('zoomed');
+
+    // Quitamos zoom si ya está activado
+    if (isZoomed) {
+      container.classList.remove('zoomed');
+      document.body.style.overflow = ''; // restaurar scroll
+    } else {
+      // Quitamos zoom de cualquier otro contenedor
+      document.querySelectorAll('.zoom-container.zoomed').forEach(c => c.classList.remove('zoomed'));
+      container.classList.add('zoomed');
+      document.body.style.overflow = 'hidden'; // opcional: bloquear scroll mientras está zoomed
+
+      // Scroll para centrar el contenedor
+      const rect = container.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      // Calculamos posición para centrar en viewport
+      const targetScrollTop = rect.top + scrollTop - (window.innerHeight / 2) + (rect.height / 2);
+      const targetScrollLeft = rect.left + scrollLeft - (window.innerWidth / 2) + (rect.width / 2);
+
+      window.scrollTo({
+        top: targetScrollTop,
+        left: targetScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+  // Cerrar zoom al hacer click afuera
+  window.addEventListener('click', () => {
+    if (container.classList.contains('zoomed')) {
+      container.classList.remove('zoomed');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+</script>
 </body>
 </html>
 
